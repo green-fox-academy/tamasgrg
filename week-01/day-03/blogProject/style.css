@@ -1,16 +1,14 @@
 * {
     margin: 0px;
-    /* padding: 0px; */
 }
 
 body {
     font-family: Arial;
-    /* padding: 0% 10%; */
 }
 
 header {
     background-color: gray;
-    padding: 10px 10%;
+    padding: 10px 20%;
 }
 
 h1 {
@@ -18,17 +16,10 @@ h1 {
     font-size: 24px;
 }
 
-/* h1,
-h2,
-h3,
-p {
-    font-family: Arial;
-} */
-
 h2 {
     font-weight: 200;
     font-size: 20px;
-    margin-bottom: 20px;
+    padding: 10px 20%;
 }
 
 h3 {
@@ -36,7 +27,14 @@ h3 {
     font-size: 15px;
 }
 
-p {
+h4 {
+    font-weight: 300;
+    font-size: 26px;
+    padding-bottom: 5px;
+}
+
+p.input,
+.input-title {
     font-size: 15px;
     margin-bottom: 15px;
     border-style: solid;
@@ -46,14 +44,12 @@ p {
 }
 
 div {
-    padding: 10px 10%;
+    padding: 10px 20%;
 }
 
 .input-title {
     color: lightgrey;
-    padding-right: 0px;
     width: 25%;
-    /* padding: 3px 0px 3px 3px; */
 }
 
 button {
@@ -64,6 +60,17 @@ button {
     border-width: 1px;
     border-radius: 4px;
     font-size: 15px;
-
     transform-style: flat;
+}
+
+div.post {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    margin: 0px 20% 15px 20%;
+    padding: 3px 3px 3px 3px;
+}
+
+.post p {
+    padding-left: 5px;
 }
