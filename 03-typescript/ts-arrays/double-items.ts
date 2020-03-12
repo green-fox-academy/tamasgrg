@@ -1,3 +1,4 @@
+'use strict';
 // - Create an array variable named `drinks` with the following content:
 //   `['Gin', 'Whiskey', 'Wine', 'Beer']`
 // - Double all the strings in the array, use a built in array method instead of
@@ -19,3 +20,8 @@ let doubleDrinks = drinks.map(function(item){
   return item + item;
   });
   console.log(doubleDrinks);
+
+//shorter:
+console.log(drinks.map((item) => {
+  return item + item;
+}));
