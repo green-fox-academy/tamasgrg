@@ -15,3 +15,4 @@ function readFile(filePath: string): string {
   return fileContent;
 }
 readFile('my-file.txt');
+export{};

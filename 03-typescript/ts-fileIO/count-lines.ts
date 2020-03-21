@@ -29,3 +29,4 @@ function numberOfLines(filePath: string): void {
 }
 
 numberOfLines('my-file.txt');
+export{};
