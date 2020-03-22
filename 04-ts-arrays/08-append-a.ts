@@ -7,3 +7,4 @@ animals = animals.map(function(e){
   return e + 'a';
 });
 console.log(animals);
+export{};

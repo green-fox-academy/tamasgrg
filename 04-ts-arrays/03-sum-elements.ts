@@ -4,3 +4,4 @@
 // - Print the sum of the second and the third element
 let numbers: number[] = [54, 23, 66, 12];
 console.log(numbers[1] + numbers[2]);
+export{};

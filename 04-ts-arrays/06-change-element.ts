@@ -11,3 +11,4 @@ numbers = numbers.map(function(value){
   }
 });
 console.log(numbers);
+export{};

@@ -7,3 +7,4 @@ let numbers: number[] = [4, 5, 6, 7];
 numbers.forEach(function (value) {
   console.log(value);
 });
+export{};
