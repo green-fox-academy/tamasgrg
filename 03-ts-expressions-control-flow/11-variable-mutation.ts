@@ -1,5 +1,4 @@
 'use strict';
-
 let a: number = 3;
 // make it bigger by 10
 a += 10;
@@ -47,3 +46,4 @@ console.log(i1 > i2 ** 2 && i1 < i2 ** 3);
 let j: number = 1521;
 // tell if j is divisible by 3 or 5 (as a boolean)
 console.log(j % 3 == 0 || j % 5 == 0);
+export{};

@@ -1,13 +1,8 @@
 'use strict';
-
 let number: number = 15;
-
-// Create a program that
-// prints the multiplication table with number
-//
+// Create a program that prints the multiplication table with number
 // Example:
 // The number 15 should print:
-//
 // 1 * 15 = 15
 // 2 * 15 = 30
 // 3 * 15 = 45
@@ -23,3 +18,4 @@ while (i <= 10) {
   console.log(`${i} * ${number} = ${i * number}`);
   i++;
 }
+export{};

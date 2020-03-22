@@ -1,5 +1,4 @@
 'use strict';
-
 let currentHours: number = 23;
 let currentMinutes: number = 59;
 let currentSeconds: number = 59;
@@ -13,4 +12,5 @@ if (currentHours > 23 || currentMinutes > 59 || currentSeconds > 59) {
     console.log('szedjed magad kicsit ossze, arra kerlek');
 } else {
     console.log(fullDayInSeconds - secondsPassed);
-};
+}
+export {};
