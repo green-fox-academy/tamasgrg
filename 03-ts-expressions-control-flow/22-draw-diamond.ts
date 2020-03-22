@@ -20,7 +20,6 @@ if (lineCount % 2 == 0) {
   lineCountHalf = (lineCount - 1) / 2;
 }
 
-let str: string = ' ';
 let o: string = ' ';
 let x: string = '*';
   
