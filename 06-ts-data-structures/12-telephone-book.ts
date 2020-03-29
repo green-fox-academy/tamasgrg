@@ -1,3 +1,4 @@
+'use strict';
 // We are going to represent our contacts in a map where the keys are going to be strings and the values are
 // going to be strings as well.
 // Create a map with the following key-value pairs.
@@ -18,10 +19,13 @@ let telephoneBook = {
 // What is John K. Miller's phone number?
 console.log('John K. Miller\'s phone number is: ' + telephoneBook['John K. Miller']);
 // Whose phone number is 307-687-2982?
-console.log('307-687-2982 is ' + Object.keys(telephoneBook).find(key => telephoneBook[key] === '307-687-2982') + '\'s phone number');
+console.log('307-687-2982 is ' + Object
+  .keys(telephoneBook)
+  .find(key => telephoneBook[key] === '307-687-2982') + '\'s phone number');
 // Do we know Chris E. Myers' phone number?
-if (telephoneBook['Chris E. Myers'] == undefined){
+if (telephoneBook['Chris E. Myers'] == undefined) {
   console.log('We don\'t know Chris E. Myers\' phone number');
 } else {
   console.log('We know Chris E. Myers\' phone number');
 }
+export{};

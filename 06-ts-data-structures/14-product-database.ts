@@ -1,3 +1,4 @@
+'use strict';
 // We are going to represent our products in a map where the keys are strings representing the product's name
 //and the values are numbers representing the product's price.
 // Create a map with the following key-value pairs.
@@ -23,7 +24,7 @@ console.log('The fish is ' + productDatabase['Fish']);
 let prices: number[] = Object.keys(productDatabase).map(key => productDatabase[key]);
 let mostExpensive: number = Math.max(...prices);
 Object.keys(productDatabase).forEach(key => {
-  if (productDatabase[key] === mostExpensive){
+  if (productDatabase[key] === mostExpensive) {
     console.log(key + ' is the most expensive product');
   }
 });
@@ -38,7 +39,7 @@ console.log('The average price is: ' + avgPrices);
 let productsBelow300If: number = 0;
 prices.forEach(value => {
   if (value < 300) {
-    productsBelow300If++
+    productsBelow300If++;
   }
 });
 console.log(productsBelow300If + ' products\' price is below 300');
@@ -59,3 +60,4 @@ Object.keys(productDatabase).forEach(key => {
     console.log(key + ' is the cheapest product');
   }
 });
+export{};

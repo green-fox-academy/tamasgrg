@@ -9,3 +9,4 @@ let quoteEnd: string = quote.slice(quote.indexOf('you') - 1); //20
 quote = "";
 quote = quote.concat(quoteStart, missingPart, quoteEnd);
 console.log(quote);
+export{};

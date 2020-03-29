@@ -6,13 +6,13 @@ let expenses: number[] = [500, 1000, 1250, 175, 800, 120];
 // Create an application which solves the following problems.
 // How much did we spend?
 // solution #1:
-function spend(list){
+function spend(list: number[]): void {
   console.log('We spent: ' + list.reduce((a, b) => a + b, 0));
 }
 spend(expenses);
 // solution #2:
 let spent: number = 0;
-expenses.forEach(function(value){
+expenses.forEach(function(value: number): void {
   // let sum: number = 0;
   spent += value;
 });
@@ -23,3 +23,4 @@ console.log('Our greatest expense was: ' + Math.max(...expenses));
 console.log('Our cheapest spending was: ' + Math.min(...expenses));
 // What was the average amount of our spendings?
 console.log('The average amount of our spendings was: ' + spent / expenses.length);
+export{};

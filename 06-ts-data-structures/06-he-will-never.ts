@@ -14,7 +14,8 @@ let hashmap = {
   11: '\n',
   3: 'say goodbye '
 };
-notSoCrypticMessage.forEach(function(value){
+notSoCrypticMessage.forEach(function(value: number): void {
   out += hashmap[value];
 });
 console.log(out);
+export{};

@@ -17,3 +17,4 @@ let todoText3: string = '\t- Diablo';
 let fullText: string = headText.concat(todoText, todoText2, todoText3);
 todoText = fullText;
 console.log(todoText);
+export{};
