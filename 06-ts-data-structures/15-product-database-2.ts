@@ -9,8 +9,7 @@
 // Apples	150
 // Bread	50
 // Chicken	550
-// : {[key: string]: number} 
-let productDB2 = {
+let productDB2: {[key: string]: number} = {
   'Eggs': 200,
   'Milk': 200,
   'Fish': 400,
