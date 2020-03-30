@@ -1,7 +1,7 @@
+'use strict';
 // Write a function that copies the contents of a file into another
 // It should take the filenames as parameters
 // It should return a boolean that shows if the copy was successful
-'use strict';
 const fs = require('fs');
 
 function readFile(inPath: string): string {
@@ -28,5 +28,5 @@ function copyContent(inPath: string, outPath: string): void {
   writeFile(outPath, fileContent);
 }
 
-copyContent('in.txt', 'out.txt');
+copyContent('files/06-in.txt', 'files/06-out.txt');
 export {};

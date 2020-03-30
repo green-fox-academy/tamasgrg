@@ -1,3 +1,4 @@
+'use strict';
 // Create a function that takes 3 parameters: a path, a word and a number
 // and is able to write into a file.
 // The path parameter should be a string that describes the location of the file you wish to modify
@@ -6,7 +7,6 @@
 // If the word is 'apple' and the number is 5, it should write 5 lines
 // into the file and each line should read 'apple'
 // The function should not raise any errors if it could not write the file.
-'use strict';
 const fs = require('fs');
 
 function makeString(word: string, number: number) {
@@ -22,5 +22,5 @@ function writeFile(path: string, word: string, number: number) {
   fs.writeFileSync (path, content);
 }
 
-writeFile('apple.txt', 'apple', 5);
+writeFile('files/05-apple.txt', 'apple', 5);
 export{};

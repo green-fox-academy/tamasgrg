@@ -1,5 +1,5 @@
-// Create a method that decrypts duplicated-chars.txt
 'use strict';
+// Create a method that decrypts duplicated-chars.txt
 const fs = require('fs');
 
 function readFile(filePath: string): string {
@@ -12,7 +12,7 @@ function readFile(filePath: string): string {
   return fileContent;
 }
 
-function halfLetters(array: string[]){
+function halfLetters(array: string[]) {
   let halfLetters: string[] = [];
   for (let i = 0; i < array.length; i += 2) {
     halfLetters.push(array[i]);
@@ -20,7 +20,7 @@ function halfLetters(array: string[]){
   return halfLetters;
 }
 
-function decodeText(filePath){
+function decodeText(filePath) {
   const origiText: string = readFile(filePath);
   const allLettersArray: string[] = origiText.split('');
   const halfLettersArray: string[] = halfLetters(allLettersArray);
@@ -29,6 +29,6 @@ function decodeText(filePath){
 }
 
 // console.log doesn't work, write to file does   ?????????????
-console.log(decodeText('duplicated-chars.txt'))
-fs.writeFileSync('decoded-text.txt', decodeText('duplicated-chars.txt'));
+console.log(decodeText('files/07-duplicated-chars.txt'))
+fs.writeFileSync('files/07-decoded-text.txt', decodeText('files/07-duplicated-chars.txt'));
 export {};
