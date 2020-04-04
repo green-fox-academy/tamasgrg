@@ -32,7 +32,7 @@ function choosePokemon(): string {
   let i: number = 0;
   while (i < pokemonOfAsh.length) {
     if (
-      pokemonOfAsh[i].isEffectiveAgainst(wildPokemon) === true &&
+      pokemonOfAsh[i].isEffectiveAgainst(wildPokemon) &&
       wildPokemon.isEffectiveAgainst(pokemonOfAsh[i]) != true) {
       chosenOne = pokemonOfAsh[i].name;
     }

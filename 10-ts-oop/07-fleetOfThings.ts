@@ -15,28 +15,42 @@ let fleet = new Fleet();
 // 4. [x] Eat lunch
 // Hint: You have to create a `print()` method as well 
 export class FleetOfThings {
-  name: string
-  constructor(name: string) {
-    this.name = name;
+  
+  main(): void {
+    let getMilk = new Thing('Get milk');
+    let removeTheObstacles = new Thing('Remove the obstacles');
+    let standUp = new Thing('Stand up');
+    let eatLunch = new Thing('Eat lunch');
+
+    fleet.add(getMilk);
+    fleet.add(removeTheObstacles);
+    fleet.add(standUp);
+    fleet.add(eatLunch);
+    
+    standUp.complete();
+    eatLunch.complete();
   }
 
-  main() {
-    let milk = new Thing('Get milk');
-    let remove = new Thing('Remove the obstacles');
-    
-    fleet.add(milk);
-    fleet.add(remove);
-    
-    // fleet.add(new Thing('Remove the obstacles'));
-    // fleet.add(new Thing('Stand up'));
-    // fleet.add(new Thing('Eat lunch'));
-
-    milk.complete;
-    return fleet
+  print(): void {
+    let ifTrue: string = '';
+    let result: string = '';
+    for (let i: number = 0; i < fleet.getThings().length; i++) {
+      fleet
+        .getThings()[i]
+        .getCompleted() ?
+          ifTrue = '. [X] ':
+          ifTrue = '. [ ] ';
+      result =
+        i + 1 +
+        ifTrue +
+        fleet
+          .getThings()[i]
+          .getName();
+      console.log(result);
+      }
   }
 }
 
-let cucc = new FleetOfThings('cucc')
-console.log(
-cucc.main()
-)
+let fleetOfThings = new FleetOfThings();
+fleetOfThings.main();
+fleetOfThings.print();
