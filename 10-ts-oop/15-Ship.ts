@@ -26,15 +26,30 @@ export class Ship {
       captainIsPassedOutText = 'he is not passed out';
     console.log(`The captain consumed ${this.captain.rumConsumed} units of rum, ` +
       `${captainIsDeadText}, and ${captainIsPassedOutText}`);
+    console.log(`There are ${this.piratesAlive()} pirates alive on the ship`);
+  }
 
+  piratesAlive(): number {
     let piratesAlive: number = 0;
     for (let i = 0; i < this.crew.length; i++) {
       if (this.crew[i].isDead != true) {
         piratesAlive++;
       }
     }
-    console.log(`There are ${piratesAlive} pirates alive on the ship`);
+    return piratesAlive;
   }
+
+  calculateShipScore(ship: Ship): number {
+    let shipScore: number = ship.piratesAlive() - ship.captain.rumConsumed;
+    return shipScore;
+  }
+  
+  battle(ship: Ship): boolean {
+    if(this.calculateShipScore(this) > this.calculateShipScore(ship)) {
+      return true;
+    }
+  }
+
 }
 
 // The Pirate Ship
