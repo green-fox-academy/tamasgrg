@@ -1,3 +1,4 @@
+'use strict';
 // Create 5 trees
 // Store the data of them in variables in your program
 // for every tree the program should store its'
