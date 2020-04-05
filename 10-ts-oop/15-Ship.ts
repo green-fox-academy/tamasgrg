@@ -15,6 +15,19 @@ export class Ship {
     return this.crew;
   }
 
+  printStateOfShip() {
+    let captainIsDeadText: string = '';
+    let captainIsPassedOutText: string = '';
+    this.captain.isDead?
+      captainIsDeadText = 'he is dead':
+      captainIsDeadText = 'he is alive';
+    this.captain.isPassedOut?
+      captainIsPassedOutText = 'he is passed out':
+      captainIsPassedOutText = 'he is passed out';
+    console.log(`The captain comsumed ${} amount of rum, );
+    
+  }
+
 }
 
 // The Pirate Ship
