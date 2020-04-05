@@ -5,6 +5,10 @@ export class Pirate {
   isPassedOut: boolean = false;
   isDead: boolean = false;
 
+  constructor(){
+    
+  }
+  
   drinkSomeRum(): void {
     if (this.isPassedOut) {
       console.log('He is passed out');

@@ -1,15 +1,21 @@
 'use strict';
 import {Pirate} from './15-Pirate';
+import {Ship} from './15-Ship';
 
-let pirate1: Pirate = new Pirate;
-let pirate2: Pirate = new Pirate;
-let pirate3: Pirate = new Pirate;
-pirate1.drinkSomeRum();
-console.log(pirate1);
-pirate1.howsItGoingMate();
-pirate1.brawl(pirate2);
-console.log(pirate1);
-console.log(pirate2);
+let ship = new Ship;
+let crew = ship.fillShip();
+console.log(ship);
+
+
+// let pirate1: Pirate = new Pirate;
+// let pirate2: Pirate = new Pirate;
+// let pirate3: Pirate = new Pirate;
+// pirate1.drinkSomeRum();
+// console.log(pirate1);
+// pirate1.howsItGoingMate();
+// pirate1.brawl(pirate2);
+// console.log(pirate1);
+// console.log(pirate2);
 
 // Exercises
 // Pirates
