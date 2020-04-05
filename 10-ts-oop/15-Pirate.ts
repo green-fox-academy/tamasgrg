@@ -1,7 +1,8 @@
 'use strict';
 
 export class Pirate {
-  isDrunk: boolean = false;
+  rumConsumed: number = 0;
+  // isDrunk: boolean = false;
   isPassedOut: boolean = false;
   isDead: boolean = false;
 
@@ -15,7 +16,7 @@ export class Pirate {
     } else if (this.isDead) {
       console.log('He is dead');
     } else {
-    this.isDrunk = true;
+    this.rumConsumed++;
     }
   }
 
@@ -28,14 +29,14 @@ export class Pirate {
       const pourMe: string = 'Pour me anudder!';
       const goToSleep: string = 'Arghh, I\'ma Pirate. How d\'ya d\'ink its goin?';
       const randomNumber: number = Math.floor(Math.random() * 5);
-      if (this.isDrunk) {
+      if (this.rumConsumed > 0) {
         for (let i = 0; i < randomNumber; i++) {
           console.log(pourMe);
         }
       } else {
         console.log(goToSleep);
         this.isPassedOut = true;
-        this.isDrunk = false;
+        this.rumConsumed = 0;
       }
     }
   }
@@ -63,7 +64,9 @@ export class Pirate {
           console.log('Enemy pirate died in battle');
         } else {
           this.isPassedOut = true;
+          this.rumConsumed = 0;
           pirate.isPassedOut = true;
+          pirate.rumConsumed = 0;
           console.log('Both pirates passed out');
         }
       }

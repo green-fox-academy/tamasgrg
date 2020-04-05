@@ -23,11 +23,18 @@ export class Ship {
       captainIsDeadText = 'he is alive';
     this.captain.isPassedOut?
       captainIsPassedOutText = 'he is passed out':
-      captainIsPassedOutText = 'he is passed out';
-    console.log(`The captain comsumed ${} amount of rum, );
-    
-  }
+      captainIsPassedOutText = 'he is not passed out';
+    console.log(`The captain consumed ${this.captain.rumConsumed} units of rum, ` +
+      `${captainIsDeadText}, and ${captainIsPassedOutText}`);
 
+    let piratesAlive: number = 0;
+    for (let i = 0; i < this.crew.length; i++) {
+      if (this.crew[i].isDead != true) {
+        piratesAlive++;
+      }
+    }
+    console.log(`There are ${piratesAlive} pirates alive on the ship`);
+  }
 }
 
 // The Pirate Ship

@@ -4,7 +4,8 @@ import {Ship} from './15-Ship';
 
 let ship = new Ship;
 let crew = ship.fillShip();
-console.log(ship);
+ship.printStateOfShip();
+// console.log(ship);
 
 
 // let pirate1: Pirate = new Pirate;
