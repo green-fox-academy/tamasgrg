@@ -6,8 +6,7 @@ export class Pirate {
   isPassedOut: boolean = false;
   isDead: boolean = false;
 
-  constructor(){
-    
+  constructor() { 
   }
   
   drinkSomeRum(): void {
@@ -16,7 +15,7 @@ export class Pirate {
     } else if (this.isDead) {
       console.log('He is dead');
     } else {
-    this.rumConsumed++;
+    this.rumConsumed += Math.floor(Math.random() * 5 + 1);
     }
   }
 

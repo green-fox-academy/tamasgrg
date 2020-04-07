@@ -44,9 +44,40 @@ export class Ship {
     return shipScore;
   }
   
+  calculateCasualties(ship: Ship): number {
+    const randomCasaultyNumber: number = Math.floor(Math.random() * ship.crew.length + 1);
+    return randomCasaultyNumber;
+  }
+  
   battle(ship: Ship): boolean {
     if(this.calculateShipScore(this) > this.calculateShipScore(ship)) {
+      let shipCasualties = this.calculateCasualties(ship);
+      for (let i = 0; i < shipCasualties; i++) {
+        ship.crew[i].isDead = true;
+      }
+      for (let j = 0; j < this.crew.length; j++) {
+        this.crew[j].drinkSomeRum();
+        this.captain.drinkSomeRum();
+      }
+      console.log('Attacking ship won the battle, enemy ship lost ' +
+        shipCasualties + ' pirates, and the attackers had some rum');
       return true;
+
+    } else if (this.calculateShipScore(this) < this.calculateShipScore(ship)) {
+      let thisCasualties = this.calculateCasualties(this);
+      for (let i = 0; i < thisCasualties; i++) {
+        this.crew[i].isDead = true;
+      }
+      for (let j = 0; j < ship.crew.length; j++) {
+        ship.crew[j].drinkSomeRum();
+        ship.captain.drinkSomeRum();
+      }
+        console.log('Attacking ship lost the battle, and lost '+
+          thisCasualties + ' pirates, and the defenders had some rum');
+        return false;
+
+    } else {
+      console.log('Draw! nothing happened, nobody drunk any rum :(');
     }
   }
 
