@@ -2,12 +2,6 @@
 import {Pirate} from './15-Pirate';
 import {Ship} from './15-Ship';
 
-let ship = new Ship;
-let crew = ship.fillShip();
-ship.printStateOfShip();
-// console.log(ship);
-
-
 // let pirate1: Pirate = new Pirate;
 // let pirate2: Pirate = new Pirate;
 // let pirate3: Pirate = new Pirate;
