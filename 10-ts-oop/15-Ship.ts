@@ -2,63 +2,63 @@
 import {Pirate} from './15-Pirate';
 
 export class Ship {
-  captain: Pirate;
-  crew: Pirate[] = [];
+  private _captain: Pirate;
+  private _crew: Pirate[] = [];
 
   fillShip(): Pirate[] {
     const randomNumber: number = Math.floor(Math.random() * 7 + 1);
-    this.captain = new Pirate;
+    this._captain = new Pirate;
     for (let i = 0; i < randomNumber; i++) {
       let pirate = new Pirate;
-      this.crew.push(pirate);
+      this._crew.push(pirate);
     }
-    return this.crew;
+    return this._crew;
   }
 
   printStateOfShip() {
     let captainIsDeadText: string = '';
     let captainIsPassedOutText: string = '';
-    this.captain.isDead?
-      captainIsDeadText = 'he is dead':
+    this._captain.isDead ?
+      captainIsDeadText = 'he is dead' :
       captainIsDeadText = 'he is alive';
-    this.captain.isPassedOut?
-      captainIsPassedOutText = 'he is passed out':
+    this._captain.isPassedOut ?
+      captainIsPassedOutText = 'he is passed out' :
       captainIsPassedOutText = 'he is not passed out';
-    console.log(`The captain consumed ${this.captain.rumConsumed} units of rum, ` +
+    console.log(`The captain consumed ${this._captain.rumConsumed} units of rum, ` +
       `${captainIsDeadText}, and ${captainIsPassedOutText}`);
     console.log(`There are ${this.piratesAlive()} pirates alive on the ship`);
   }
 
   piratesAlive(): number {
     let piratesAlive: number = 0;
-    for (let i = 0; i < this.crew.length; i++) {
-      if (this.crew[i].isDead != true) {
+    for (let i = 0; i < this._crew.length; i++) {
+      if (this._crew[i].isDead != true) {
         piratesAlive++;
       }
     }
     return piratesAlive;
   }
 
-  calculateShipScore(ship: Ship): number {
-    let shipScore: number = ship.piratesAlive() - ship.captain.rumConsumed;
+  static calculateShipScore(ship: Ship): number {
+    let shipScore: number = ship.piratesAlive() - ship._captain.rumConsumed;
     return shipScore;
   }
   
-  calculateCasualties(ship: Ship): number {
-    const randomCasaultyNumber: number = Math.floor(Math.random() * ship.crew.length + 1);
+  static calculateCasualties(ship: Ship): number {
+    const randomCasaultyNumber: number = Math.floor(Math.random() * ship._crew.length + 1);
     return randomCasaultyNumber;
   }
   
-  battle(ship: Ship): boolean {
-    if(this.calculateShipScore(this) > this.calculateShipScore(ship)) {
-      let shipCasualties = this.calculateCasualties(ship);
+  battle(enemyShip: Ship): boolean {
+    if(this.calculateShipScore(this) > this.calculateShipScore(enemyShip)) {
+      let shipCasualties = this.calculateCasualties(enemyShip);
       for (let i = 0; i < shipCasualties; i++) {
-        ship.crew[i].isDead = true;
+        enemyShip._crew[i].setIsDead(true);
       }
       for (let j = 0; j < this.crew.length; j++) {
-        this.crew[j].drinkSomeRum();
+        this._crew[j].drinkSomeRum();
       }
-      this.captain.drinkSomeRum();
+      this._captain.drinkSomeRum();
       console.log('Attacking ship won the battle, enemy ship lost ' +
         shipCasualties + ' pirates, and the attackers had some rum');
       return true;

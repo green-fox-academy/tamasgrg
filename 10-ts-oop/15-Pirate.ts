@@ -13,7 +13,31 @@ export class Pirate {
       this._isPassedOut = isPassedOut;
       this._isDead = isDead;
   }
+   
+  setRumConsumed(rum: number) {
+    this._rumConsumed = rum;
+  }
   
+  setIsPassedOut(x: boolean) {
+    this._isPassedOut = x;
+  }
+  
+  setIsDead(x: boolean) {
+    this._isDead = x;
+  }
+
+  get rumConsumed(): number {
+    return this._rumConsumed;
+  }
+  
+  get isPassedOut(): boolean {
+    return this._isPassedOut;
+  }
+
+  get isDead(): boolean {
+    return this._isDead;
+  }
+
   drinkSomeRum(): void {
     if (this._isPassedOut) {
       console.log('He is passed out');
