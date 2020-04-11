@@ -44,7 +44,17 @@ export class Pirate {
     } else if (this._isDead) {
       console.log('He is dead');
     } else {
-      this._rumConsumed += 1;
+      this._rumConsumed ++;
+    }
+  }
+
+  drinkRandomRum(): void {
+    if (this._isPassedOut) {
+      console.log('He is passed out');
+    } else if (this._isDead) {
+      console.log('He is dead');
+    } else {
+      this._rumConsumed += Math.floor(Math.random() * 5 + 1);;
     }
   }
 

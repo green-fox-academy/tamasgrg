@@ -8,6 +8,7 @@ export class Ship {
   fillShip(): Pirate[] {
     const randomNumber: number = Math.floor(Math.random() * 7 + 1);
     this._captain = new Pirate;
+    this._captain.drinkRandomRum();
     for (let i = 0; i < randomNumber; i++) {
       let pirate = new Pirate;
       this._crew.push(pirate);
@@ -50,28 +51,28 @@ export class Ship {
   }
   
   battle(enemyShip: Ship): boolean {
-    if(this.calculateShipScore(this) > this.calculateShipScore(enemyShip)) {
-      let shipCasualties = this.calculateCasualties(enemyShip);
-      for (let i = 0; i < shipCasualties; i++) {
+    if(Ship.calculateShipScore(this) > Ship.calculateShipScore(enemyShip)) {
+      let enemyShipCasualties = Ship.calculateCasualties(enemyShip);
+      for (let i = 0; i < enemyShipCasualties; i++) {
         enemyShip._crew[i].setIsDead(true);
       }
-      for (let j = 0; j < this.crew.length; j++) {
-        this._crew[j].drinkSomeRum();
+      for (let j = 0; j < this._crew.length; j++) {
+        this._crew[j].drinkRandomRum();
       }
-      this._captain.drinkSomeRum();
+      this._captain.drinkRandomRum();
       console.log('Attacking ship won the battle, enemy ship lost ' +
-        shipCasualties + ' pirates, and the attackers had some rum');
+        enemyShipCasualties + ' pirates, and the attackers had some rum');
       return true;
 
-    } else if (this.calculateShipScore(this) < this.calculateShipScore(ship)) {
-      let thisCasualties = this.calculateCasualties(this);
+    } else if (Ship.calculateShipScore(this) < Ship.calculateShipScore(enemyShip)) {
+      let thisCasualties = Ship.calculateCasualties(this);
       for (let i = 0; i < thisCasualties; i++) {
-        this.crew[i].isDead = true;
+        this._crew[i].setIsDead(true);
       }
-      for (let j = 0; j < ship.crew.length; j++) {
-        ship.crew[j].drinkSomeRum();
+      for (let j = 0; j < enemyShip._crew.length; j++) {
+        enemyShip._crew[j].drinkRandomRum();
       }
-      ship.captain.drinkSomeRum();
+      enemyShip._captain.drinkRandomRum();
       console.log('Attacking ship lost the battle, and lost '+
         thisCasualties + ' pirates, and the defenders had some rum');
       return false;
@@ -80,11 +81,6 @@ export class Ship {
       console.log('Draw! nothing happened, nobody drunk any rum :(');
     }
   }
-
-  // generateRandomShip() {
-
-  // }
-
 }
 
 // The Pirate Ship
