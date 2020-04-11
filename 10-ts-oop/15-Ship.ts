@@ -79,6 +79,7 @@ export class Ship {
 
     } else {
       console.log('Draw! nothing happened, nobody drunk any rum :(');
+      return undefined;
     }
   }
 }
