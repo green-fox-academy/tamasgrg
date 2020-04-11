@@ -45,8 +45,8 @@ export class Pirate {
     this._isDead = true;
   }
 
-  brawl(pirate: Pirate) {
-    if (pirate._isDead || pirate._isPassedOut) {
+  brawl(enemyPirate: Pirate) {
+    if (enemyPirate._isDead || enemyPirate._isPassedOut) {
       console.log('Enemy is already out, mate!');
     } else {
       if (this._isPassedOut) {
@@ -59,13 +59,13 @@ export class Pirate {
           this._isDead = true;
           console.log('Pirate died in battle');
         } else if (randomNumber == 2) {
-          pirate._isDead = true;
+          enemyPirate._isDead = true;
           console.log('Enemy pirate died in battle');
         } else {
           this._isPassedOut = true;
           this._rumConsumed = 0;
-          pirate._isPassedOut = true;
-          pirate._rumConsumed = 0;
+          enemyPirate._isPassedOut = true;
+          enemyPirate._rumConsumed = 0;
           console.log('Both pirates passed out');
         }
       }
