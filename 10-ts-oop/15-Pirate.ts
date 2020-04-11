@@ -1,71 +1,71 @@
 'use strict';
 
 export class Pirate {
-  rumConsumed: number = 0;
-  // isDrunk: boolean = false;
-  isPassedOut: boolean = false;
-  isDead: boolean = false;
+  private _rumConsumed: number;
+  private _isPassedOut: boolean;
+  private _isDead: boolean;
 
-  constructor() { 
+  constructor(
+    rumConsumed: number = 0,
+    isPassedOut: boolean = false,
+    isDead: boolean = false) { 
+      this._rumConsumed = rumConsumed;
+      this._isPassedOut = isPassedOut;
+      this._isDead = isDead;
   }
   
   drinkSomeRum(): void {
-    if (this.isPassedOut) {
+    if (this._isPassedOut) {
       console.log('He is passed out');
-    } else if (this.isDead) {
+    } else if (this._isDead) {
       console.log('He is dead');
     } else {
-    this.rumConsumed += Math.floor(Math.random() * 5 + 1);
+      this._rumConsumed += 1;
     }
   }
 
   howsItGoingMate() {
-    if (this.isPassedOut) {
+    if (this._isPassedOut) {
       console.log('He is passed out');
-    } else if (this.isDead) {
+    } else if (this._isDead) {
       console.log('He is dead');
     } else {
-      const pourMe: string = 'Pour me anudder!';
-      const goToSleep: string = 'Arghh, I\'ma Pirate. How d\'ya d\'ink its goin?';
-      const randomNumber: number = Math.floor(Math.random() * 5);
-      if (this.rumConsumed > 0) {
-        for (let i = 0; i < randomNumber; i++) {
-          console.log(pourMe);
-        }
+      if (this._rumConsumed < 5) {
+        console.log('Pour me anudder!');
       } else {
-        console.log(goToSleep);
-        this.isPassedOut = true;
-        this.rumConsumed = 0;
+        console.log('Arghh, I\'ma Pirate. How d\'ya d\'ink its goin?');
+        this._isPassedOut = true;
+        this._rumConsumed = 0;
       }
     }
   }
 
   die() {
-    this.isDead? console.log('He is already dead'):
-    this.isDead = true;
+    this._isDead? console.log('He is already dead'):
+    this._isDead = true;
   }
 
   brawl(pirate: Pirate) {
-    if (pirate.isDead || pirate.isPassedOut) {
+    if (pirate._isDead || pirate._isPassedOut) {
       console.log('Enemy is already out, mate!');
     } else {
-      if (this.isPassedOut) {
+      if (this._isPassedOut) {
         console.log('He is passed out');
-      } else if (this.isDead) {
+      } else if (this._isDead) {
         console.log('He is dead');
       } else {
         const randomNumber: number = Math.floor(Math.random() * 3 + 1);
         if (randomNumber == 1) {
-          this.isDead = true;
+          this._isDead = true;
           console.log('Pirate died in battle');
         } else if (randomNumber == 2) {
-          pirate.isDead = true;
+          pirate._isDead = true;
           console.log('Enemy pirate died in battle');
         } else {
-          this.isPassedOut = true;
-          this.rumConsumed = 0;
-          pirate.isPassedOut = true;
-          pirate.rumConsumed = 0;
+          this._isPassedOut = true;
+          this._rumConsumed = 0;
+          pirate._isPassedOut = true;
+          pirate._rumConsumed = 0;
           console.log('Both pirates passed out');
         }
       }
