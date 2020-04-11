@@ -9,13 +9,13 @@
 //  with n=0 representing the start of the sequence.
 
 function fibonacci(n: number): number {
-  if (n == 0) {
+  if (n == 1) {
     return 0;
-  } else if (n == 1) {
+  } else if (n == 2) {
     return 1;
   } else {
-    return n + fibonacci(n - 1);
+    return fibonacci(n - 1) + fibonacci(n - 2);
   }
 }
-console.log(fibonacci(3));
+console.log(fibonacci(5));
 export{};
