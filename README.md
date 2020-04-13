@@ -1,4 +1,4 @@
-# tamasgrg
+# tamasgrg @ ptc/afters
 
 repositories created for practice:
 
