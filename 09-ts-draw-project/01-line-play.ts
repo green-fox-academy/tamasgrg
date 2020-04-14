@@ -3,7 +3,7 @@ const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
 const sizeCanvas: number = 400;
-const marginCanvas: number = 10;
+const marginCanvas: number = 5;
 const lineNumber: number = 15;
 const lineDistance: number = (sizeCanvas - 2 * marginCanvas) / lineNumber;
 
