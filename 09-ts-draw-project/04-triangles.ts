@@ -10,7 +10,6 @@ const a: number = sizeCanvas / numberOfTriangles;
 const m: number = Math.sqrt(3) * a / 2;
 
 function drawTriangle(startX: number, startY: number, a: number): void {
-  // const m: number = Math.sqrt(3) * a / 2;
   ctx.beginPath();
   ctx.moveTo(startX, startY);
   ctx.lineTo(startX + a, startY);
