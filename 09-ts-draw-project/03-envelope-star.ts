@@ -10,15 +10,15 @@ ctx.strokeStyle = '#00cd00';
 ctx.beginPath();
 for (let i = 1; i < lineNumber; i++) {  
   ctx.moveTo(i * lineDistance, sizeCanvas / 2);
-  ctx.lineTo(sizeCanvas / 2, i * lineDistance + 200);
+  ctx.lineTo(sizeCanvas / 2, i * lineDistance + sizeCanvas / 2);
   
-  ctx.moveTo(200 - i * lineDistance, sizeCanvas / 2);
+  ctx.moveTo(sizeCanvas / 2 - i * lineDistance, sizeCanvas / 2);
   ctx.lineTo(sizeCanvas / 2, i * lineDistance);
   
-  ctx.moveTo(400 - i * lineDistance, sizeCanvas / 2);
-  ctx.lineTo(sizeCanvas / 2, 200-i * lineDistance);
+  ctx.moveTo(sizeCanvas - i * lineDistance, sizeCanvas / 2);
+  ctx.lineTo(sizeCanvas / 2, sizeCanvas / 2 - i * lineDistance);
 
-  ctx.moveTo(400 - i * lineDistance, sizeCanvas / 2);
-  ctx.lineTo(sizeCanvas / 2, i * lineDistance+200);
+  ctx.moveTo(sizeCanvas - i * lineDistance, sizeCanvas / 2);
+  ctx.lineTo(sizeCanvas / 2, i * lineDistance + sizeCanvas / 2);
 }
 ctx.stroke();
