@@ -1,20 +1,14 @@
 'use strict';
-// import { Flower } from "./02-Flower";
-// import { Tree } from "./02-Tree";
 import { Plant } from "./02-Plant";
 // The Garden
 // is able to hold unlimited amount of flowers or trees
 // when watering it should only water those what needs water with equally divided amount
 //  amongst them
 // eg. watering with 40 and 4 of them need water then each gets watered with 10
-
 export class Garden {
   private _plants: Plant[] = [];
-  // _plants = this.flowers.concat(Tree.trees);
-  constructor() {
-    // this._plants.push
-    // this._plants = Flower.flowers.concat(Tree.trees)
-  }
+  
+  constructor() {};
 
   addPlant(plant: Plant): any {
     return this._plants.push(plant);
@@ -28,24 +22,15 @@ export class Garden {
     })
   }
 
-
-  // setPlants(): Plant[] {
-  //   return this._plants;
-  // }
-
-  // fillGarden(): void {
-  //   this._plants.push(Flower.getFlowers())
-  // }
-
-  water(item: Plant, amount: number): void {
+  water(amount: number): void {
+    let plantsToWater: Plant[] = [];
     this._plants.forEach((item: Plant) => {
-      let plantsToWater: number = 0;
-      if (item.ifNeedsWater()) {
-        plantsToWater++;
-        item.setWaterAmount(amount / plantsToWater * item.getAbsorbingCoefficient());
-      }
+      if (item.ifNeedsWater()) plantsToWater.push(item);
     })
+    plantsToWater.forEach((item: Plant) =>
+      item.setWaterAmount(amount / plantsToWater.length * item.getAbsorbingCoefficient())
+    )
+    console.log(`Watering with ${amount}`);
+    this.showGarden();
   }
 }
-
-// let myGarden = new Garden;
