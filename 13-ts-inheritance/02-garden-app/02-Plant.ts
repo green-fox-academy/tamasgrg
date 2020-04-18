@@ -1,5 +1,5 @@
 'use strict';
-export class Plant {
+export abstract class Plant {
   protected _color: string;
   protected _waterNeeded: number;
   protected _waterAmount: number;

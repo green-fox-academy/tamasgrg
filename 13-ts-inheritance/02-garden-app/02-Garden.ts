@@ -6,12 +6,14 @@ import { Plant } from "./02-Plant";
 //  amongst them
 // eg. watering with 40 and 4 of them need water then each gets watered with 10
 export class Garden {
-  private _plants: Plant[] = [];
+  private _plants: Plant[];
   
-  constructor() {};
+  constructor() {
+    this._plants = [];
+  };
 
-  addPlant(plant: Plant): any {
-    return this._plants.push(plant);
+  addPlant(plant: Plant): void {
+    this._plants.push(plant);
   }
 
   showGarden(): void {
