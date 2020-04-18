@@ -5,7 +5,7 @@ export abstract class Plant {
   protected _waterAmount: number;
   protected _absorbingCoefficient: number;
 
-  constructor(color: string, ) {
+  constructor(color: string) {
     this._color = color;
     this._waterAmount = 0;
   }
