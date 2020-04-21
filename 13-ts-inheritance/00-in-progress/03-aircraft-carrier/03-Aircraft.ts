@@ -1,13 +1,15 @@
 'use strict';
+// import { F16 } from "./03-F16";
+// import { F35 } from "./03-F35";
 export abstract class Aircraft {
 
   protected _maxAmmo: number;
   protected _baseDmg: number;
   protected _ammo: number;
 
-  constructor (maxAmmo: number, baeDmg: number) {
+  constructor (maxAmmo: number, baseDmg: number) {
     this._maxAmmo = maxAmmo;
-    this._baseDmg = baeDmg;
+    this._baseDmg = baseDmg;
     this._ammo = 0;
   }
 
@@ -23,10 +25,10 @@ export abstract class Aircraft {
     return this._maxAmmo;
   }
 
-
   fight(): number {
+    let dmg: number = this._ammo * this._baseDmg;
     this._ammo = 0;
-    return this._ammo * this._baseDmg;
+    return dmg;
   }
 
   refill(amount: number): number {
@@ -46,9 +48,9 @@ export abstract class Aircraft {
 
   getStatus(): string {
     return `Type ${this.constructor.name}, ` +
-      `Ammo ${this._ammo}, ` +
-      `Base Damage ${this._baseDmg}, ` +
-      `All Damage ${this._ammo * this._baseDmg}`;
+      `Ammo: ${this._ammo}, ` +
+      `Base Damage: ${this._baseDmg}, ` +
+      `All Damage: ${this._ammo * this._baseDmg}`;
   }
 
   isPriority(): boolean {

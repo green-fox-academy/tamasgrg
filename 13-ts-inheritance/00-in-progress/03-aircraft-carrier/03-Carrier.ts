@@ -48,6 +48,12 @@ export class Carrier {
     // If the health points are 0 then it should return: It's dead Jim :(
 }
 
+
+let myCarrier: Carrier = new Carrier(2300, 5000);
+myCarrier.add(5);
+console.log(
+myCarrier.getStatus())
+
 // Carrier
 // Create a class that represents an aircraft-carrier
 
@@ -75,3 +81,11 @@ export class Carrier {
 // Type F16, Ammo: 8, Base Damage: 30, All Damage: 240
 // Type F16, Ammo: 8, Base Damage: 30, All Damage: 240
 // If the health points are 0 then it should return: It's dead Jim :(
+
+
+  let a = new F35
+  console.log(
+  
+  a.getStatus()
+  )
+  

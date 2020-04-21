@@ -16,7 +16,11 @@ export class F35 extends Aircraft {
 
 }
 
+// let a = new F35
+// console.log(
 
+// a.getStatus()
+// )
 // F35
 // Max ammo: 12
 // Base damage: 50
