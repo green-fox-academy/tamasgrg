@@ -1,5 +1,30 @@
 'use strict';
+import { Aircraft } from "./03-Aircraft";
+import { F16 } from "./03-F16";
+import { F35 } from "./03-F35";
+
 export class Carrier {
+
+  private _aircrafts: Aircraft[];
+  private _ammoStore: number;
+  private _hp: number;
+
+  constructor(ammo: number, hp: number) {
+    this._aircrafts = [];
+    this._ammoStore = ammo;
+    this._hp = hp;
+  }
+
+  add(newAircrafts: number): void {
+    for (let i = 0; i < newAircrafts; i++) {
+      let randomNumber: number = Math.floor(Math.random() * 2);
+      randomNumber == 0 ? this._aircrafts.push(new F16) : this._aircrafts.push(new F35); 
+    }
+  }
+
+  fill() {
+    
+  }
 
 }
 

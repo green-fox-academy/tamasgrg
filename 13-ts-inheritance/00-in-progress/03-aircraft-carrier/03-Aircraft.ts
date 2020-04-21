@@ -1,5 +1,5 @@
 'use strict';
-export class Aircraft {
+export abstract class Aircraft {
 
   protected _maxAmmo: number;
   protected _baseDmg: number;
