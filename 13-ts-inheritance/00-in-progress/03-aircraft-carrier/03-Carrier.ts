@@ -36,6 +36,16 @@ export class Carrier {
     })
   }
 
+  getStatus(): string {
+    return `HP: ${this._hp}, ` +
+        `Aircraft count: ${this._aircrafts.length}, ` +
+        `Ammo Storage: ${this._ammoStore}, ` +
+        `Total damage: xxxxxxxxx` +
+        `\nAircrafts:` +
+        this._aircrafts.forEach((value: Aircraft) => value.getStatus());
+  }
+   
+    // If the health points are 0 then it should return: It's dead Jim :(
 }
 
 // Carrier
