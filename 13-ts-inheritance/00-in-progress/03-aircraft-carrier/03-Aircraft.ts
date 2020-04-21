@@ -11,6 +11,19 @@ export abstract class Aircraft {
     this._ammo = 0;
   }
 
+  get ammo(): number {
+    return this._ammo;
+  }
+
+  set ammo(newAmmo: number) {
+    this._ammo = newAmmo;
+  }
+
+  get maxAmmo(): number {
+    return this._maxAmmo;
+  }
+
+
   fight(): number {
     this._ammo = 0;
     return this._ammo * this._baseDmg;
