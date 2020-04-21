@@ -37,22 +37,24 @@ export class Carrier {
   }
 
   getStatus(): string {
-    return `HP: ${this._hp}, ` +
-        `Aircraft count: ${this._aircrafts.length}, ` +
-        `Ammo Storage: ${this._ammoStore}, ` +
-        `Total damage: xxxxxxxxx` +
-        `\nAircrafts:` +
-        this._aircrafts.forEach((value: Aircraft) => value.getStatus());
+    let carrierStatus: string = 
+      `HP: ${this._hp}, ` +
+      `Aircraft count: ${this._aircrafts.length}, ` +
+      `Ammo Storage: ${this._ammoStore}, ` +
+      `Total damage: xxxxxxxxx` +
+      `\nAircrafts:\n`
+    if (this._hp == 0) return 'It\'s dead Jim :(';
+    let aircraftStatus: string = '';
+    this._aircrafts.forEach((value: Aircraft) => aircraftStatus += value.getStatus() + '\n');
+    return carrierStatus + aircraftStatus;
   }
    
-    // If the health points are 0 then it should return: It's dead Jim :(
 }
 
 
 let myCarrier: Carrier = new Carrier(2300, 5000);
 myCarrier.add(5);
-console.log(
-myCarrier.getStatus())
+console.log(myCarrier.getStatus())
 
 // Carrier
 // Create a class that represents an aircraft-carrier
@@ -81,11 +83,3 @@ myCarrier.getStatus())
 // Type F16, Ammo: 8, Base Damage: 30, All Damage: 240
 // Type F16, Ammo: 8, Base Damage: 30, All Damage: 240
 // If the health points are 0 then it should return: It's dead Jim :(
-
-
-  let a = new F35
-  console.log(
-  
-  a.getStatus()
-  )
-  
