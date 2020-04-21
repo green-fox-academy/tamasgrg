@@ -1,6 +1,47 @@
 'use strict';
 export class Aircraft {
 
+  protected _maxAmmo: number;
+  protected _baseDmg: number;
+  protected _ammo: number;
+
+  constructor (maxAmmo: number, baeDmg: number) {
+    this._maxAmmo = maxAmmo;
+    this._baseDmg = baeDmg;
+    this._ammo = 0;
+  }
+
+  fight(): number {
+    this._ammo = 0;
+    return this._ammo * this._baseDmg;
+  }
+
+  refill(amount: number): number {
+    if (amount + this._ammo <= this._maxAmmo) {
+      this._ammo += amount;
+      return 0;
+    } else {
+      let getAmmo: number = this._maxAmmo - this._ammo;
+      this._ammo = this._maxAmmo;
+      return amount - getAmmo;
+    }
+  }
+
+  getType(): string {
+    return this.constructor.name;
+  }
+
+  getStatus(): string {
+    return `Type ${this.constructor.name}, ` +
+      `Ammo ${this._ammo}, ` +
+      `Base Damage ${this._baseDmg}, ` +
+      `All Damage ${this._ammo * this._baseDmg}`;
+  }
+
+  isPriority(): boolean {
+    return this.constructor.name == 'F35' ? true : false;
+  }
+
 }
 
 // Aircrafts
