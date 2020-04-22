@@ -20,13 +20,12 @@ function drawTriangle(startX: number, startY: number, a: number): void {
 }
 
 function fractalTriangles(x, y, a) {
-  // const m: number = calculateHeight(a);
   drawTriangle(x, y, a);
-  if (a > 1) {
+  if (a > 10) {
   const m: number = calculateHeight(a);
   fractalTriangles(x, y, a/2);
   fractalTriangles(x+a/2, y, a/2);
-  fractalTriangles(x+a/4, y+m, a/2);
+  fractalTriangles(x+a/4, y+m/2, a/2);
   }
 }
   // if (a > 5) {
