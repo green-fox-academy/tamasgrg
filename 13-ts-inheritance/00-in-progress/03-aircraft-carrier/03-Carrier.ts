@@ -21,9 +21,7 @@ export class Carrier {
       randomNumber == 0 ? this._aircrafts.push(new F16) : this._aircrafts.push(new F35); 
     }
   }
-// It should fill all the aircraft with ammo and subtract the needed ammo from the ammo storage
-// If there is not enough ammo then it should start to fill the aircrafts with priority first
-// If there is no ammo when this method is called, it should throw an exception
+
   fill(): void {
     if (this._ammoStore == 0) console.log('Can\'t fill aircrafts, ammo storage is empty');
     this._aircrafts.filter((value: Aircraft) => value.isPriority())
@@ -40,12 +38,29 @@ export class Carrier {
       `HP: ${this._hp}, ` +
       `Aircraft count: ${this._aircrafts.length}, ` +
       `Ammo Storage: ${this._ammoStore}, ` +
-      `Total damage: xxxxxxxxx` +
+      `Total damage: ${this.calculateTotalDmg()}` +
       `\nAircrafts:\n`
     if (this._hp == 0) return 'It\'s dead Jim :(';
     let aircraftStatus: string = '';
     this._aircrafts.forEach((value: Aircraft) => aircraftStatus += value.getStatus() + '\n');
     return carrierStatus + aircraftStatus;
+  }
+
+  fight(carrier: Carrier): void {
+    let dmgTotal: number = 0;
+    this._aircrafts.forEach((value: Aircraft) => {
+      dmgTotal += value.fight();
+      value.ammo = 0;
+    })
+    carrier._hp -= dmgTotal;
+  }
+
+  calculateTotalDmg(): number {
+    let totalDmg: number = 0;
+    this._aircrafts.forEach((value: Aircraft) => {
+      totalDmg += value.ammo * value.baseDmg;
+    })
+    return totalDmg;
   }
    
 }

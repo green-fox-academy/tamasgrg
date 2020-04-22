@@ -1,6 +1,4 @@
 'use strict';
-// import { F16 } from "./03-F16";
-// import { F35 } from "./03-F35";
 export abstract class Aircraft {
 
   protected _maxAmmo: number;
@@ -13,6 +11,10 @@ export abstract class Aircraft {
     this._ammo = 0;
   }
 
+  get baseDmg(): number {
+    return this._baseDmg;
+  }
+  
   get ammo(): number {
     return this._ammo;
   }
