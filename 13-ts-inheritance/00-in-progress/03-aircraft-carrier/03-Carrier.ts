@@ -25,14 +25,13 @@ export class Carrier {
 // If there is not enough ammo then it should start to fill the aircrafts with priority first
 // If there is no ammo when this method is called, it should throw an exception
   fill(): void {
+    if (this._ammoStore == 0) console.log('Can\'t fill aircrafts, ammo storage is empty');
     this._aircrafts.filter((value: Aircraft) => value.isPriority())
       .forEach((value: Aircraft) => {
-        this._ammoStore -= value.refill(this._ammoStore);
-        if (this._ammoStore = 0) console.log('error, no ammo');
+        this._ammoStore = value.refill(this._ammoStore);
       })
     this._aircrafts.forEach((value: Aircraft) => {
-      this._ammoStore -= value.refill(this._ammoStore);
-      if (this._ammoStore = 0) console.log('error, no ammo');
+      this._ammoStore = value.refill(this._ammoStore);
     })
   }
 
@@ -50,11 +49,6 @@ export class Carrier {
   }
    
 }
-
-
-let myCarrier: Carrier = new Carrier(2300, 5000);
-myCarrier.add(5);
-console.log(myCarrier.getStatus())
 
 // Carrier
 // Create a class that represents an aircraft-carrier
