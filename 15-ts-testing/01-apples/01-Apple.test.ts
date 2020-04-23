@@ -1,17 +1,18 @@
 'use strict';
 import * as test from 'tape';
-export class Apple {
-  getApple(): string {
-    return 'apple';
-  }
-}
+import { Apple } from './01-Apple';
 
 test('test apple', t => {
+  // Triple-A
+  // Arrange
   const myApple: Apple = new Apple;
-  const actual = myApple.getApple();
   const expected: string = 'apple';
 
-  t.equal(actual, expected);
+  // Act
+  const result: string = myApple.getApple();
+  
+  // Assert
+  t.equal(result, expected, 'no parameter');
   t.end();
 });
 
