@@ -18,9 +18,9 @@ function drawTriangle(startX: number, startY: number, a: number): void {
   ctx.stroke();
 }
 
-function fractalTriangles(x, y, a): void {
+function fractalTriangles(x: number, y: number, a: number): void {
   drawTriangle(x, y, a);
-  if (a > density) {
+  if (a > minSize) {
   const m: number = calculateHeight(a);
   fractalTriangles(x, y, a / 2);
   fractalTriangles(x + a / 2, y, a / 2);
@@ -28,5 +28,5 @@ function fractalTriangles(x, y, a): void {
   }
 }
 
-let density: number = 18;
+let minSize: number = 18;
 fractalTriangles(0, 0, 600);

@@ -14,7 +14,7 @@ function drawCircle(x: number, y: number, r: number): void {
 }
 
 function drawFractalCircles(x: number, y: number, r: number): void {
-  if (r > density) {
+  if (r > minSize) {
     drawCircle(x, y, r);
     let a: number = r / 2 * Math.sqrt(3);
     drawFractalCircles(x, y - r / 2, r / 2);
@@ -23,5 +23,5 @@ function drawFractalCircles(x: number, y: number, r: number): void {
   }
 }
 
-let density: number = 15;
+let minSize: number = 15;
 drawFractalCircles(centerX, centerY, sizeCanvasX - centerX);
