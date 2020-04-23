@@ -22,10 +22,11 @@ function drawHexagon(startX: number, startY: number, a: number): void {
 
 function hexagonFractal(x: number, y: number, a: number) {
   drawHexagon(x, y, a);
-
-  
-  hexagonFractal(x + a/4, y - Math.sqrt(3) * a / 4, a / 2);
-  // hexagonFractal(x + Math.sqrt(3) * a, y - Math.sqrt(3) * a / 4, a / 2)
+  if (a > 15) {
+    hexagonFractal(x + a/4, y - Math.sqrt(3) * a / 4, a / 2);
+    hexagonFractal(x + a/4, y + Math.sqrt(3) * a / 4, a / 2);
+    hexagonFractal(x + a, y, a / 2);
+  }
 }
 
 hexagonFractal(0, canvasHeight / 2, a);
