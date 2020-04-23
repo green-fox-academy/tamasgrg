@@ -20,13 +20,14 @@ function drawHexagon(startX: number, startY: number, a: number): void {
   ctx.stroke();
 }
 
-function hexagonFractal(x: number, y: number, a: number) {
+function hexagonFractal(x: number, y: number, a: number): void {
   drawHexagon(x, y, a);
-  if (a > 15) {
-    hexagonFractal(x + a/4, y - Math.sqrt(3) * a / 4, a / 2);
-    hexagonFractal(x + a/4, y + Math.sqrt(3) * a / 4, a / 2);
+  if (a > minSize) {
+    hexagonFractal(x + a / 4, y - Math.sqrt(3) * a / 4, a / 2);
+    hexagonFractal(x + a / 4, y + Math.sqrt(3) * a / 4, a / 2);
     hexagonFractal(x + a, y, a / 2);
   }
 }
 
+const minSize: number = 15;
 hexagonFractal(0, canvasHeight / 2, a);
