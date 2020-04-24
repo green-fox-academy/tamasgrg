@@ -1,5 +1,4 @@
 'use strict';
-
 export class Sum {
 
   sum(list: number[]): number {
