@@ -16,6 +16,7 @@ export function median(pool: number[]): number {
 }
 
 export function isVowel(character: string): boolean {
+  if (character.length !== 1) throw 'error, its not a character';
   return ['a', 'u', 'o', 'e', 'i', 'á', 'é', 'í', 'ó', 'ö', 'ő', 'ú', 'ü', 'ű']
     .some(vowel => vowel === character);
 }

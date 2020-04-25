@@ -63,8 +63,10 @@ test('is vowel: a', function (t: any): any {
   t.end();
 });
 
-test('is vowel: u', function (t: any): any {
-  t.ok(isVowel('u'));
+test('is vowel: abba', function (t: any): any {
+  t.throws(() => {isVowel('abba');
+  });
+  
   t.end();
 });
 
