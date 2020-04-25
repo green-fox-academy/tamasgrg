@@ -1,5 +1,5 @@
 'use strict';
-
+//need to add filter for non-letter chars
 export class Anagram {
 
   static anagram(text1: string, text2: string) {

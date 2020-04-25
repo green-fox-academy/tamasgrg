@@ -18,4 +18,19 @@ function fibonacci(n: number): number {
   }
 }
 console.log(fibonacci(5));
+
+// the Map-trick for big numbers:
+
+// let fibo = new Map();
+// fibo.set(1, 0);
+// fibo.set(2, 1);
+// function fibonaccifast(n:number): number{
+//     if(fibo.has(n)){
+//         return fibo.get(n);
+//     }else{
+//         fibo.set(n, fibonaccifast(n-1)+fibonaccifast(n-2));
+//         return fibo.get(n);
+//     }
+// }
+
 export{};
