@@ -82,8 +82,3 @@ test('translate: lagopus', function (t: any): any {
   t.equal(translate('lagopus'), 'lavagovopuvus');
   t.end();
 });
-
-test('translate: majom', function (t: any): any {
-  t.equal(translate('majom'), 'mavajovom');
-  t.end();
-});
