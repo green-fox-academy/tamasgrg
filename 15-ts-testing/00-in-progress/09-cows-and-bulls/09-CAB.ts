@@ -1,8 +1,33 @@
 'use strict';
 export class CAB {
-  
-}
 
+  private _goal: number; // 4-digit number
+  private _gameState: string;
+  private _guessCount: number;
+
+  constructor() {
+    this._goal = Math.floor(1000 + Math.random() * 9000);
+    this._gameState = 'playing';
+    this._guessCount = 0;
+  }
+
+  get goal(): number {
+    return this._goal;
+  }
+
+  get gameState(): string {
+    return this._gameState;
+  }
+  
+  get guessCount(): number {
+    return this._guessCount;
+  }
+
+  guess(): string {
+    return 
+  }
+
+}
 // Cows and Bulls
 // Create a class what is capable of playing exactly one game of Cows and Bulls (CAB).
 // The player have to guess a 4 digit number. For every digit that the player guessed correctly
