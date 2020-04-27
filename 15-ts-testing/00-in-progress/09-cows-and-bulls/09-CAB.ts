@@ -27,7 +27,9 @@ export class CAB {
     this._guessCount = n;
   }
 
-  guess(): string {
+  guess(guess: number): string {
+    if (guess.toString().length != 4) throw 'error, it\'s not a 4-digit number';
+    // if (guess < 1000 || guess > 9999) throw 'error, it\'s not a 4-digit number';
     this.guessCount++;
     return '';
   }

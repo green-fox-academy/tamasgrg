@@ -29,12 +29,30 @@ test ('CAB constructor guessCount', t => {
 
 test ('CAB .guess() increases guessCount', t => {
   const game: CAB = new CAB;
-  game.guess();
-  game.guess();
+  game.guess(1111);
+  game.guess(1111);
   const expected: number = 2;
 
   const result: number = game.guessCount;
 
   t.equal(result, expected, 'guessCount = 2');
+  t.end();
+});
+
+test ('CAB .guess() input exceptions', t => {
+  const game: CAB = new CAB;
+  
+  t.throws(() => {game.guess(0);
+  }, 'input = 0');
+
+  t.throws(() => {game.guess(-5);
+  }, 'input = -5');
+
+  t.throws(() => {game.guess(99999);
+  }, 'input = 99999');
+  
+  t.throws(() => {game.guess(2222.5);
+  }, 'input = 2222.5');
+
   t.end();
 });
