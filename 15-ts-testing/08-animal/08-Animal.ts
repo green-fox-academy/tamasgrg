@@ -17,11 +17,13 @@ export class Animal {
   }
 
   eat() {
-    return this.hunger--;
+    if (this.hunger < 1) throw 'error, animal is not hungry';
+    return --this.hunger;
   }
 
   drink() {
-    return this.thirst--;
+    if (this.thirst < 1) throw 'error, animal is not thirsty';
+    return --this.thirst;
   }
 
   // return both????

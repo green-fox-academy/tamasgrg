@@ -19,7 +19,6 @@ export class Sharpie {
 
   use(): number {
     if (this.inkAmount < 1) throw 'error, not enough ink';
-    // if (this.inkAmount % 10
     return --this.inkAmount;
   }
 }
