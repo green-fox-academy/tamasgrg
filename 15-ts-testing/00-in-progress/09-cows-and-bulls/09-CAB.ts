@@ -23,11 +23,24 @@ export class CAB {
     return this._guessCount;
   }
 
+  set guessCount(n: number) {
+    this._guessCount = n;
+  }
+
   guess(): string {
-    return 
+    this.guessCount++;
+    return '';
   }
 
 }
+
+// let game = new CAB;
+// console.log(game);
+// game.guess()
+// game.guess()
+// game.guess()
+// console.log(game);
+
 // Cows and Bulls
 // Create a class what is capable of playing exactly one game of Cows and Bulls (CAB).
 // The player have to guess a 4 digit number. For every digit that the player guessed correctly

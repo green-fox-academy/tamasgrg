@@ -28,5 +28,13 @@ test ('CAB constructor guessCount', t => {
 });
 
 test ('CAB .guess() increases guessCount', t => {
-  
+  const game: CAB = new CAB;
+  game.guess();
+  game.guess();
+  const expected: number = 2;
+
+  const result: number = game.guessCount;
+
+  t.equal(result, expected, 'guessCount = 2');
+  t.end();
 });
