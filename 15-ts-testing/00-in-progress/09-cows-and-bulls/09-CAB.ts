@@ -44,16 +44,14 @@ export class CAB {
     }
     let matchTotal: number = 0;
     for (let i = 0; i < 4; i++) {
-      if (guess.toString().match(this.goal.toString().charAt(i))) {
+      if (this.goal.toString().match(guess.toString().charAt(i))) {
         matchTotal++;
       }
     }
-    // let matchTotal: number = guess.toString().match(this.goal.toString()).length;
     cowCount = matchTotal - bullCount;
     let resultBull: string = bullCount == 0 ? '' : `${bullCount} bull`;
     let resultCow: string = cowCount == 0 ? '' : `${cowCount} cow`;
-    return resultBull + resultCow;
-    // return bullCount == 0 ? '' : `${bullCount} bull`;
+    return bullCount * cowCount > 0 ? `${resultBull}, ${resultCow}` : resultBull + resultCow;
   }
 
 }
