@@ -79,3 +79,20 @@ test ('test CAB .guess() logic, goal = 1234, only bulls', t => {
   t.equal(result5, expected5, 'goal = 1234, guess = 5555, 0 bull');
   t.end();
 });
+
+test ('test CAB .guess() logic, goal = 1234, only cows', t => {
+  const game: CAB = new CAB;
+  game.goal = 1234;
+  const expected1: string = '';
+  const expected2: string = '1 cow';
+  const expected3: string = '4 cow';
+  
+  const result1: string = game.guess(5687);
+  const result2: string = game.guess(2555);
+  const result3: string = game.guess(4321);
+  
+  t.equal(result1, expected1, 'goal = 1234, guess = 5678, 0 cow');
+  t.equal(result2, expected2, 'goal = 1234, guess = 2555, 1 cow');
+  t.equal(result3, expected3, 'goal = 1234, guess = 4321, 4 cow');
+  t.end();
+});

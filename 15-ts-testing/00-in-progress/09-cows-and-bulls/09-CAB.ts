@@ -38,14 +38,35 @@ export class CAB {
     let bullCount: number = 0;
     let cowCount: number = 0;
     for (let i = 0; i < 4; i++) {
-      if (Math.floor(guess/10**i) == Math.floor(this.goal/10**i)) {
+      if (Math.floor(guess / 10 ** i) == Math.floor(this.goal / 10 ** i)) {
         bullCount++;
       }  
     }
-    return bullCount == 0 ? '' : `${bullCount} bull`;
+    let matchTotal: number = 0;
+    for (let i = 0; i < 4; i++) {
+      if (guess.toString().match(this.goal.toString().charAt(i))) {
+        matchTotal++;
+      }
+    }
+    // let matchTotal: number = guess.toString().match(this.goal.toString()).length;
+    cowCount = matchTotal - bullCount;
+    let resultBull: string = bullCount == 0 ? '' : `${bullCount} bull`;
+    let resultCow: string = cowCount == 0 ? '' : `${cowCount} cow`;
+    return resultBull + resultCow;
+    // return bullCount == 0 ? '' : `${bullCount} bull`;
   }
 
 }
+// let guess = 13
+// let goal = 55
+// console.log(
+// if (guess.toString().match(goal.toString().charAt(0))) console.log(666);
+
+// let matchTotal: number = guess.toString().match(goal.toString()).length;
+// console.log(matchTotal);
+
+// console.log(guess.toString().match(goal.toString().charAt(0)).length)
+
 
 // let game = new CAB;
 // console.log(game);
