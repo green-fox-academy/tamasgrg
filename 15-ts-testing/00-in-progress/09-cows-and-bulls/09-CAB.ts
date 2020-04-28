@@ -15,6 +15,10 @@ export class CAB {
     return this._goal;
   }
 
+  set goal(n: number) {
+    this._goal = n;
+  }
+
   get gameState(): string {
     return this._gameState;
   }
@@ -31,7 +35,14 @@ export class CAB {
     if (guess.toString().length != 4) throw 'error, it\'s not a 4-digit number';
     // if (guess < 1000 || guess > 9999) throw 'error, it\'s not a 4-digit number';
     this.guessCount++;
-    return '';
+    let bullCount: number = 0;
+    let cowCount: number = 0;
+    for (let i = 0; i < 4; i++) {
+      if (Math.floor(guess/10**i) == Math.floor(this.goal/10**i)) {
+        bullCount++;
+      }  
+    }
+    return bullCount == 0 ? '' : `${bullCount} bull`;
   }
 
 }
