@@ -1,6 +1,7 @@
 'use strict';
 import * as test from 'tape';
 import { CAB } from "./09-CAB";
+import { getUnpackedSettings } from 'http2';
 
 test ('test CAB constructor _goal', t => {
   const game: CAB = new CAB
@@ -63,7 +64,7 @@ test ('test CAB .guess() logic, goal = 1234, only bulls', t => {
   const expected1: string = '1 bull';
   const expected2: string = '2 bull';
   const expected3: string = '3 bull';
-  const expected4: string = '4 bull';
+  const expected4: string = 'Congarulations, you won. The secret number was 1234';
   const expected5: string = '';
 
   const result1: string = game.guess(1555);
@@ -118,12 +119,36 @@ test ('test CAB .guess() logic, goal = 9999, only bulls', t => {
   const game: CAB = new CAB;
   game.goal = 9999;
   const expected1: string = '1 bull';
-  const expected2: string = '4 bull';
+  const expected2: string = 'Congarulations, you won. The secret number was 9999';
   
   const result1: string = game.guess(9888);
   const result2: string = game.guess(9999);
   
   t.equal(result1, expected1, 'goal = 9999, guess = 9888, 1 bull');
   t.equal(result2, expected2, 'goal = 9999, guess = 9999, 4 bull');
+  t.end();
+});
+
+test ('test CAB .guess() gameState after winning', t => {
+  const game: CAB = new CAB;
+  game.goal = 9999;
+  game.guess(9999);
+  const expected: string = 'finished';
+  
+  const result: string = game.gameState;
+  
+  t.equal(result, expected, 'gameState = \'finished\'');
+  t.end();
+});
+
+test ('test CAB .guess() gameState after wrong guess', t => {
+  const game: CAB = new CAB;
+  game.goal = 9999;
+  game.guess(9998);
+  const expected: string = 'playing';
+  
+  const result: string = game.gameState;
+  
+  t.equal(result, expected, 'gameState = \'playing\'');
   t.end();
 });

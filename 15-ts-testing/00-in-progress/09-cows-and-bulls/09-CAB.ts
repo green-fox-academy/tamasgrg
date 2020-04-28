@@ -22,6 +22,10 @@ export class CAB {
   get gameState(): string {
     return this._gameState;
   }
+
+  set gameState(text: string) {
+    this._gameState = text;
+  }
   
   get guessCount(): number {
     return this._guessCount;
@@ -42,6 +46,10 @@ export class CAB {
         bullCount++;
       }  
     }
+    if (bullCount == 4) {
+      this.gameState = 'finished';
+      return `Congarulations, you won. The secret number was ${this.goal}`;
+    }
     let matchTotal: number = 0;
     for (let i = 0; i < 4; i++) {
       if (this.goal.toString().match(guess.toString().charAt(i))) {
@@ -55,23 +63,6 @@ export class CAB {
   }
 
 }
-// let guess = 13
-// let goal = 55
-// console.log(
-// if (guess.toString().match(goal.toString().charAt(0))) console.log(666);
-
-// let matchTotal: number = guess.toString().match(goal.toString()).length;
-// console.log(matchTotal);
-
-// console.log(guess.toString().match(goal.toString().charAt(0)).length)
-
-
-// let game = new CAB;
-// console.log(game);
-// game.guess()
-// game.guess()
-// game.guess()
-// console.log(game);
 
 // Cows and Bulls
 // Create a class what is capable of playing exactly one game of Cows and Bulls (CAB).
