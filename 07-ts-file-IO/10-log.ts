@@ -24,7 +24,7 @@ function getdata(fileContent: string, columnNumber: number): string[] {
   return data;
 }
 
-function getUniqueIPs(filePath: string) {
+function getUniqueIPs(filePath: string): object {
   const data: string = readFile(filePath);
   const allIPs: string[] = getdata(data, 1);
   const uniqueIPs = new Set(allIPs);
@@ -35,11 +35,24 @@ console.log(getUniqueIPs('files/10-log.txt'));
 
 // Write a function that returns the GET / POST request ratio.
 
-function getGetPostRatio(filePath: string) {
+function calculateRatio(list: string[]): string {
+  let getCount: number = 0;
+  let postCount: number = 0;
+  list.forEach((value: string) => {
+    value == 'GET /\r' ? getCount++ : postCount++;
+  });
+  const result: string =
+    `\nThe GET / POST request ratio is: ${getCount}/${postCount} (${getCount / postCount})\n`;
+  return result;
+}
+
+function getGetPostRatio(filePath: string): string {
   const data: string = readFile(filePath);
   const allGetPost: string[] = getdata(data, 2);
-  console.log(allGetPost); 
+  const result: string = calculateRatio(allGetPost);
+  return result;
 }
-getGetPostRatio('files/10-log.txt')
+
+console.log(getGetPostRatio('files/10-log.txt'));
 
 export{};
