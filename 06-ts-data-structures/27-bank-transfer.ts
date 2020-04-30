@@ -9,6 +9,7 @@ const accounts: any[] = [
 // Create function that returns the name and balance of cash on an account in a list
 // getNameAndBalance(11234543);
 // should return: ['Igor', 203004099.2]
+
 function getNameAndBalance(accNr: number): any[] {
   let nameAndBalance: any[] = [];
   accounts.forEach((value: any) => {
@@ -18,6 +19,7 @@ function getNameAndBalance(accNr: number): any[] {
   });
   return nameAndBalance;
 }
+
 console.log(getNameAndBalance(23456311));
 
 // Create function that transfers an amount of cash from one account to another
@@ -29,7 +31,24 @@ console.log(getNameAndBalance(23456311));
 //
 // Log "404 - account not found" if any of the account numbers don't exist to the console.
 
-// transferAmount(accounts, 43546731, 23456311, 500.0);
+function transferAmount (list: any[], accNrFrom: number, accNrTo: number, amount: number) {
+  let accNrs = [];
+  const errorMsg: string = '404 - account not found';
+  const okMsg: string = `Transfer successful, ${amount} has been transferred from ${accNrFrom} to ${accNrTo}`;
+  list.forEach((value) => accNrs.push(Object.values(value)[1]));
+  if (accNrs.includes(accNrFrom) == false || accNrs.includes(accNrTo) == false) console.log(errorMsg);
+  else {
+    list.forEach((value) => {
+      if (value.accountNumber == accNrFrom) value.balance -= amount;
+      if (value.accountNumber == accNrTo) value.balance += amount;
+    });
+    console.log(okMsg);
+  }
+}
+
+transferAmount(accounts, 43546731, 23456311, 500.0);
+console.log(accounts);
+
 //After printing the "accounts" it should look like:
 // const accounts = [
 //	{ clientName: 'Igor', accountNumber: 11234543, balance: 203004099.2 },
@@ -39,6 +58,6 @@ console.log(getNameAndBalance(23456311));
 
 export = {
   getNameAndBalance,
-  // transferAmount,
-  // accounts
+  transferAmount,
+  accounts
 };
