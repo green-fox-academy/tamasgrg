@@ -14,7 +14,7 @@ function readFile(filePath: string): string {
   return fileContent;
 }
 
-function getdata(fileContent: string, columnNumber: number): string[] {
+function getData(fileContent: string, columnNumber: number): string[] {
   let fileRows: string[] = fileContent.split('\n');
   let data: string[] = [];
   for (let i = 0; i < fileRows.length; i++) {
@@ -26,7 +26,7 @@ function getdata(fileContent: string, columnNumber: number): string[] {
 
 function getUniqueIPs(filePath: string): object {
   const data: string = readFile(filePath);
-  const allIPs: string[] = getdata(data, 1);
+  const allIPs: string[] = getData(data, 1);
   const uniqueIPs = new Set(allIPs);
   // console.log(uniqueIPs.size);
   return uniqueIPs;
@@ -48,7 +48,7 @@ function calculateRatio(list: string[]): string {
 
 function getGetPostRatio(filePath: string): string {
   const data: string = readFile(filePath);
-  const allGetPost: string[] = getdata(data, 2);
+  const allGetPost: string[] = getData(data, 2);
   const result: string = calculateRatio(allGetPost);
   return result;
 }
