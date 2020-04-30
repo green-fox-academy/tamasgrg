@@ -14,13 +14,20 @@ function readFile(filePath: string): string {
 
 function decodeText(filePath: string) {
   const rawText: string = readFile(filePath);
-  
+  // const textLines: string[] = rawText.split('\r');
+  const codes: number[] = [];
+  // textLines.forEach((value: string) => {
 
-  let codes: number[] = [];
+  // });
+
   for (let i = 0; i < rawText.length; i++) {
-    codes.push(rawText.charCodeAt(i)-1);
+    codes.push(rawText.charCodeAt(i));
   }
-  let newText: string = String.fromCharCode(...codes);
+  const newCodes: number[] = [];
+  codes.forEach((value: number) => {
+    newCodes.push(66 <= value && value <= 91 || 98 <= value && value <= 123 ? value - 1 : value);
+  });
+  let newText: string = String.fromCharCode(...newCodes);
   // codes.forEach((value: number) => {
   //   newText + String.fromCharCode(...codes)
   //   //   return value = value+1;
