@@ -16,7 +16,7 @@ export class Ship {
     return this._crew;
   }
 
-  printStateOfShip() {
+  printStateOfShip(): void {
     let captainIsDeadText: string = '';
     let captainIsPassedOutText: string = '';
     this._captain.isDead ?
@@ -25,9 +25,9 @@ export class Ship {
     this._captain.isPassedOut ?
       captainIsPassedOutText = 'he is passed out' :
       captainIsPassedOutText = 'he is not passed out';
-    console.log(`The captain consumed ${this._captain.rumConsumed} units of rum, ` +
+    console.log(`\nThe captain consumed ${this._captain.rumConsumed} units of rum, ` +
       `${captainIsDeadText}, and ${captainIsPassedOutText}`);
-    console.log(`There are ${this.piratesAlive()} pirates alive on the ship`);
+    console.log(`There are ${this.piratesAlive()} pirates alive on the ship\n`);
   }
 
   piratesAlive(): number {
@@ -46,39 +46,39 @@ export class Ship {
   }
   
   static calculateCasualties(ship: Ship): number {
-    const randomCasaultyNumber: number = Math.floor(Math.random() * ship._crew.length + 1);
-    return randomCasaultyNumber;
+    const randomCasualtyNumber: number = Math.floor(Math.random() * ship._crew.length + 1);
+    return randomCasualtyNumber;
   }
   
   battle(enemyShip: Ship): boolean {
-    if(Ship.calculateShipScore(this) > Ship.calculateShipScore(enemyShip)) {
+    if (Ship.calculateShipScore(this) > Ship.calculateShipScore(enemyShip)) {
       let enemyShipCasualties = Ship.calculateCasualties(enemyShip);
       for (let i = 0; i < enemyShipCasualties; i++) {
-        enemyShip._crew[i].setIsDead(true);
+        enemyShip._crew[i].isDead = true;
       }
       for (let j = 0; j < this._crew.length; j++) {
         this._crew[j].drinkRandomRum();
       }
       this._captain.drinkRandomRum();
-      console.log('Attacking ship won the battle, enemy ship lost ' +
-        enemyShipCasualties + ' pirates, and the attackers had some rum');
+      console.log('Your ship won the battle, enemy ship lost ' +
+        enemyShipCasualties + ' pirates, the winners had some rum');
       return true;
 
     } else if (Ship.calculateShipScore(this) < Ship.calculateShipScore(enemyShip)) {
       let thisCasualties = Ship.calculateCasualties(this);
       for (let i = 0; i < thisCasualties; i++) {
-        this._crew[i].setIsDead(true);
+        this._crew[i].isDead =true;
       }
       for (let j = 0; j < enemyShip._crew.length; j++) {
         enemyShip._crew[j].drinkRandomRum();
       }
       enemyShip._captain.drinkRandomRum();
-      console.log('Attacking ship lost the battle, and lost '+
-        thisCasualties + ' pirates, and the defenders had some rum');
+      console.log('Your ship lost the battle, lost '+
+        thisCasualties + ' pirates, the winners had some rum');
       return false;
 
     } else {
-      console.log('Draw! nothing happened, nobody drunk any rum :(');
+      console.log('Draw!');
       return undefined;
     }
   }

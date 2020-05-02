@@ -1,23 +1,34 @@
 'use strict';
 import {Pirate} from './15-Pirate';
-import {Ship} from './15-Ship';
+import { BattleApp } from './15-BattleApp';
+import { WarApp } from './15-WarApp';
+import { Ship } from './15-Ship';
+import { Armada } from './15-Armada';
 
-let pirate1: Pirate = new Pirate;
-let pirate2: Pirate = new Pirate;
-let pirate3: Pirate = new Pirate;
-pirate1.drinkSomeRum();
-pirate1.drinkSomeRum();
-pirate1.drinkSomeRum();
-pirate1.drinkSomeRum();
-pirate1.drinkSomeRum();
-pirate1.drinkSomeRum();
-console.log(pirate1);
-pirate1.howsItGoingMate();
-console.log(pirate1);
-pirate3.brawl(pirate2);
-console.log(pirate1);
-console.log(pirate2);
-console.log(pirate3);
+// let pirate1: Pirate = new Pirate;
+// let pirate2: Pirate = new Pirate;
+// let pirate3: Pirate = new Pirate;
+// pirate1.drinkSomeRum();
+// pirate1.drinkSomeRum();
+// pirate1.drinkSomeRum();
+// pirate1.drinkSomeRum();
+// pirate1.drinkSomeRum();
+// pirate1.drinkSomeRum();
+// console.log(pirate1);
+// pirate1.howsItGoingMate();
+// console.log(pirate1);
+// pirate3.brawl(pirate2);
+// console.log(pirate1);
+// console.log(pirate2);
+// console.log(pirate3);
+
+// let ship1 = new Ship;
+// let ship2 = new Ship;
+// BattleApp.battle(ship1, ship2);
+
+let armada1 = new Armada;
+let armada2 = new Armada;
+WarApp.war(armada1, armada2);
 
 // Exercises
 // Pirates
