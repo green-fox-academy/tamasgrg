@@ -1,0 +1,22 @@
+* {
+  margin: 0px;
+}
+
+.container {
+  width: 380px;
+}
+
+.green {
+  background-color: rgb(81, 212, 0);
+  height: 25vh;
+}
+
+.yellow {
+  background-color: rgb(255, 214, 42);
+  height: 50vh;
+}
+
+.purple {
+  background-color: rgb(176, 42, 255);
+  height: 25vh;
+}
