@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+container {
+  margin: 100px auto;
+  width: 500px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 125px;
+  line-height: 25px;
+}
+
+td {
+  padding-left: 3px;
+  font-size: 20px;
+}
+
+button {
+  /* border-width: 1; */
+  /* border-style: inset; */
+  width: 125px;
+  height: 25px;
+}
+
+#tableLeft {
+  order: 1;
+}
+
+#tableRight {
+  order: 3;
+}
+
+#buttons {
+  border-spacing: 0;
+  order: 2;
+  text-align: center;
+}
