@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat'); */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 * {
   padding: 0;
@@ -19,7 +19,7 @@ body {
 
 h1, p {
   color: #3cb878;
-  /* font-family: Montserrat, sans-serif; */
+  font-family: Montserrat, sans-serif;
   text-align: center;
 }
 
