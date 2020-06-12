@@ -9,9 +9,11 @@
   <body>
     <h1>Cocktails</h1>
     <span>
-      <a href="">ALL</a>
+      <a href="http://localhost:3000">ALL</a>
       <% alcoholList.forEach(a => { %>
-        <a href=""><%= a.toUpperCase() %></a>
+        <a href="http://localhost:3000/?alcohol=<%= a %>">
+          <%= a.toUpperCase() %>
+        </a>
       <% }); %>
     </span>
     <table>
