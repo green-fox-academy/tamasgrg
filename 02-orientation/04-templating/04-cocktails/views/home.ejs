@@ -2,24 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Greeting</title>
+    <title>Cocktails</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css"/>
   </head>
 
   <body>
     <h1>Cocktails</h1>
+    <span>
+      <a href="">ALL</a>
+      <% alcoholList.forEach(a => { %>
+        <a href=""><%= a.toUpperCase() %></a>
+      <% }); %>
+    </span>
     <table>
       <tr>
-        <th>Name</th>
-        <th>Price</th>
+        <th class="left">NAME</th>
+        <th>PRICE</th>
       </tr>
-      <% for (let i = 0; i < 10; i++) { %>
-        <!-- <% cocktails.forEach((c) => { %> -->
-        <tr>
-          <td>
-          </td>
-        </tr>
-      <%}; %>
+        <% booz.forEach(c => { %>
+      <tr>
+        <td>
+          <b><%= c.name %></b>
+          <%= (c.isAlcoholic) ? '' : ' (non-alcoholic)' %>
+          <br>
+          <% c.contains.forEach(item => { %>
+            <%= item %>
+          <% }); %>
+        </td>
+        <td class="center">
+          <b><%= c.price %> Ft</b>
+        </td>
+      </tr>
+      <%}); %>
     </table>
   </body>
 </html>

@@ -64,13 +64,23 @@ const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 app.set('view engine', 'ejs');
 app.use('/static', express.static('static'));
 
+// When a user visits the application
+// with the base route (/), pass the cocktails list without filtering it
+// with /?alcohol={alcholType} route (for example /?alcohol=gin), filter the cocktails and pass only these that contains the selected alcohol
+
 app.get('/', (req, res) => {
+  const type = req.query.type;
+  let booz = cocktails;
+  if (type) {
+    booz = cocktails.filter(cocktail => cocktail.contains.includes(type));
+  }
+
   res.render('home', {
     alcoholList,
-    cocktails,
+    booz,
   });
 });
-  
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
