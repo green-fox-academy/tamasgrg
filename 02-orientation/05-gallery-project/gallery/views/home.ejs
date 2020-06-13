@@ -6,7 +6,7 @@
     <title>Gallery project</title>
     <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
-  <%const PicIndex = picDb.findIndex(p => p.picSrc === pic) %>
+  <% const PicIndex = picDb.findIndex(p => p.picSrc === pic) %>
   <body>
     <header>
       <h1>Dublin Bike Polo @ College Green 22/09/2019</h1>
@@ -22,9 +22,13 @@
         <img id="main-pic" src="/assets/pic/<%= pic %>">
 
         <a href="http://localhost:3000/<%= (PicIndex === Object.keys(picDb).length - 1) ? picDb[0].picSrc : picDb[PicIndex + 1].picSrc %>">
-          <img src="/assets/arrow.svg">
+          <img id="right-arrow" src="/assets/arrow.svg">
         </a>
 
+        <div class="title">
+          <%= picDb[PicIndex].title %>
+        </div>
+        
         <div class="text">
           <%= picDb[PicIndex].description %>
         </div>
@@ -39,6 +43,9 @@
       </div>
 
     </main>
+
+    <script src="event.js"></script>
+
   </body>
 
 </html>

@@ -1,3 +1,4 @@
+'use strict';
 const picDb = [
     {
         title: 'Sharp turn',
@@ -9,25 +10,25 @@ const picDb = [
         title: 'Fight',
         picSrc: 'pic01.jpg',
         thSrc: 'th01.jpg',
-        description: 'Steve and Jimbo are fighting for control the ball',
+        description: 'Steve and Jimbo are fighting for controlling the ball',
     },
     {
         title: 'Gorog',
         picSrc: 'pic02.jpg',
         thSrc: 'th02.jpg',
-        description: 'Gorog is fighting for control of his bike',
+        description: 'Gorog is fighting for controlling his own bike',
     },
     {
         title: 'Behind Tomas Daibis',
         picSrc: 'pic03.jpg',
         thSrc: 'th03.jpg',
-        description: 'Hardcourt Bike Polo game behind the statue of Tomas Daibis, College Green',
+        description: 'Hardcourt Bike Polo game behind the statue of Tomas Daibis on College Green, Dublin',
     },
     {
-        title: 'Wtf???',
+        title: 'Wtf?',
         picSrc: 'pic04.jpg',
         thSrc: 'th04.jpg',
-        description: 'Spectators visibly can\'t beleive their eyes seeing that Young Mark just stole me bloody bike',
+        description: 'Spectators visibly can\'t beleive their eyes, seeing how Young Mark just stole me bloody bike',
     },
     {
         title: 'Fiona',
@@ -39,13 +40,13 @@ const picDb = [
         title: 'Steel',
         picSrc: 'pic06.jpg',
         thSrc: 'th06.jpg',
-        description: 'Both the steel frames and the joint of the players are battle-hardened',
+        description: 'Both the steel frames and the joints of the players are battle-hardened',
     },
     {
         title: 'Jimbo down',
         picSrc: 'pic07.jpg',
         thSrc: 'th07.jpg',
-        description: 'Occasionaly one team or another have casualties',
+        description: 'Occasionaly one team or another has some casualties...',
     }
 
 ];
