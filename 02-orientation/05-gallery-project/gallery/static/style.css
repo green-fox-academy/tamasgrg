@@ -2,51 +2,35 @@
     margin: 0;
 } */
 
-.pic {
-    /* justify-content: center; */
-    /* background-color: red; */
-    /* position: relative; */
-    width: 50%;
-    /* padding-top: 56.25%; */
- }
- 
- /* .text {
-    position:  absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    text-align: center;
-    font-size: 20px;
-    color: white;
- } */
-
-/* table {
-    margin-top: 30px;
-}
-
-th {
-    color: white;
-    background-color: black;
-}
-
-tr:nth-child(even) {
-    background: #CCC
-}
-
-td {
-    padding: 10px 20px;
-}
-
-.center {
+header {
     text-align: center;
 }
 
-.left {
-    width: 85%;
-}
-
-a {
-    text-decoration: none;
-    margin-right: 20px;
+/* .main {
+    position: relative;
+    display: flex;
+    text-align: center;
 } */
+
+/* .container {
+    flex: 0 1 40%;
+    justify-content: space-between;
+    flex-basis: 240px;
+} */
+
+.picture {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+#main-pic {
+    width: 50%;
+}
+
+.text {
+    font-size: 30px;
+    position: absolute;
+    bottom: 8px;
+    left: 25%;
+}

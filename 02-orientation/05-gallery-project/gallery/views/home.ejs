@@ -8,24 +8,37 @@
   </head>
   <%const PicIndex = picDb.findIndex(p => p.picSrc === pic) %>
   <body>
-    <h1>Dublin Bike Polo @ College Green 22/09/2019</h1>
+    <header>
+      <h1>Dublin Bike Polo @ College Green 22/09/2019</h1>
+    </header>
 
-    <div class="container">
-      <img src="/assets/arrow.svg">
-      <img class="pic" src="/assets/pic/<%= pic %>">
-      <img src="/assets/arrow.svg">
-      <p>
-        <%= picDb[PicIndex].description %>
-      </p>
-    </div>
+    <main class="content">
 
-    <div class="container">
-      <% picDb.forEach((pic, index) => { %>
-        <a href="http://localhost:3000/<%= picDb[index].picSrc %>">
-          <img src="/assets/th/<%= picDb[index].thSrc %>">
+      <div class="picture">
+        <a href="http://localhost:3000/<%= (PicIndex === 0) ? picDb[Object.keys(picDb).length - 1].picSrc : picDb[PicIndex - 1].picSrc %>">
+          <img src="/assets/arrow.svg">
         </a>
-      <% }); %>
-    </div>
+
+        <img id="main-pic" src="/assets/pic/<%= pic %>">
+
+        <a href="http://localhost:3000/<%= (PicIndex === Object.keys(picDb).length - 1) ? picDb[0].picSrc : picDb[PicIndex + 1].picSrc %>">
+          <img src="/assets/arrow.svg">
+        </a>
+
+        <div class="text">
+          <%= picDb[PicIndex].description %>
+        </div>
+      </div>
+
+      <div class="thumbnails">
+        <% picDb.forEach((pic, index) => { %>
+          <a href="http://localhost:3000/<%= picDb[index].picSrc %>">
+            <img src="/assets/th/<%= picDb[index].thSrc %>">
+          </a>
+        <% }); %>
+      </div>
+
+    </main>
   </body>
 
 </html>
