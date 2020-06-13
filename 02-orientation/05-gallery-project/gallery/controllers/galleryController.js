@@ -7,7 +7,7 @@ const galleryController = (app) => {
     res.render('../views/home.ejs', {
       pic,
       picDb: db.picDb,
-      thDb: db.thDb,
+      // getPicIndex,
     });
   });
 
@@ -16,12 +16,17 @@ const galleryController = (app) => {
     res.render('../views/home.ejs', {
       pic,
       picDb: db.picDb,
-      thDb: db.thDb,
+      // getPicIndex,
     });
   });
 
 };
 
+// const getPicIndex = () => {
+//   return picDb.findIndex(pic);
+// }
+
 module.exports = {
   galleryController,
+  // getPicIndex,
 }

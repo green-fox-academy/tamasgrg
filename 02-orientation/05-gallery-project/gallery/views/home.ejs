@@ -6,18 +6,23 @@
     <title>Gallery project</title>
     <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
-
+  <%const PicIndex = picDb.findIndex(p => p.picSrc === pic) %>
   <body>
-    <h1>My Gallery</h1>
+    <h1>Dublin Bike Polo @ College Green 22/09/2019</h1>
 
-    <div class="container"> 
-			<img class="pic" src="/assets/pic/<%= pic %>">
+    <div class="container">
+      <img src="/assets/arrow.svg">
+      <img class="pic" src="/assets/pic/<%= pic %>">
+      <img src="/assets/arrow.svg">
+      <p>
+        <%= picDb[PicIndex].description %>
+      </p>
     </div>
 
     <div class="container">
-      <% thDb.forEach((th, index) => { %>
-        <a href="http://localhost:3000/<%= picDb[index] %>">
-          <img src="/assets/th/<%= thDb[index] %>">
+      <% picDb.forEach((pic, index) => { %>
+        <a href="http://localhost:3000/<%= picDb[index].picSrc %>">
+          <img src="/assets/th/<%= picDb[index].thSrc %>">
         </a>
       <% }); %>
     </div>
