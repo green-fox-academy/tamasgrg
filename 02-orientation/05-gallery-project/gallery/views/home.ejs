@@ -15,8 +15,10 @@
     </div>
 
     <div class="container">
-      <% thDb.forEach(th => { %>
-        <img src="/assets/th/<%= th %>">
+      <% thDb.forEach((th, index) => { %>
+        <a href="http://localhost:3000/<%= picDb[index] %>">
+          <img src="/assets/th/<%= thDb[index] %>">
+        </a>
       <% }); %>
     </div>
   </body>
