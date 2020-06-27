@@ -38,6 +38,12 @@ app.get('/greeter', (req, res) => {
   }
 });
 
+app.get('/appenda/:appendable', (req, res) => {
+  let appendable = req.params.appendable;
+  if (!appendable) res.status(404);
+  res.json({"appended": `${appendable}a`});
+});
+
 app.listen(PORT, () => {
   console.log(`The server is up and running on ${PORT}`);
 });
