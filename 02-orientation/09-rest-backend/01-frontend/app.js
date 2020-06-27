@@ -21,6 +21,23 @@ function double(num) {
   return {'received': num, 'result': num * 2};
 }
 
+app.get('/greeter', (req, res) => {
+  let name = req.query.name;
+  let title = req.query.title;
+  if (!name && !title) {
+    res.status(400);
+    res.json({"error": "Please provide a name and a title!"});
+  } else if (!name) {
+    res.status(400);
+    res.json({"error": "Please provide a name!"});
+  } else if (!title) {
+    res.status(400);
+    res.json({"error": "Please provide a title!"});
+  } else {
+    res.json({"welcome_message": `Oh, hi there ${name}, my dear ${title}!`});
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`The server is up and running on ${PORT}`);
 });
