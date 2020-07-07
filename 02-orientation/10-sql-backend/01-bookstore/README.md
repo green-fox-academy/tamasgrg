@@ -1,6 +1,6 @@
 # Bookstore endpoints
 
-Import the bookstore database from [here](../../sql-basics/assets/data.sql).
+Import the bookstore database from [here](assets/data.sql).
 
 ## List book titles
 
