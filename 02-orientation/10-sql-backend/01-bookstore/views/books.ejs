@@ -11,5 +11,24 @@
         <li><%= b.book_name %></li>
       <% }) %>
     </ul>
+    <h2>All data:</h2>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Publisher</th>
+        <th>Price</th>
+      </tr>
+    <% books.forEach((b) => { %>
+      <tr>
+        <td><%= b.book_name %> </td>
+        <td><%= b.aut_name %> </td>
+        <td><%= b.cate_descrip %> </td>
+        <td><%= b.pub_name %> </td>
+        <td><%= b.book_price %> </td>
+     </tr>
+    <% }) %>
+    </table>
   </body>
 </html>

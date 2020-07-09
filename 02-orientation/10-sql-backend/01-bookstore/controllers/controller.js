@@ -10,7 +10,7 @@ const bookController = (app) => {
   });
   
   app.get('/books', (req, res) => {
-    Book.getTitles((err, books) => {
+    Book.getData((err, books) => {
       if (err) {
         console.error('Error during DB query:', err);
         return;
