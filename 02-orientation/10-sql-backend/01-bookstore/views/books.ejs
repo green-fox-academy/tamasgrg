@@ -5,9 +5,10 @@
   </head>
   <body>
     <h1>Books</h1>
+    <h2>All titles:</h2>
     <ul>
-      <% konyv.forEach((k) => { %>
-        <li><%= k.book_id %></li>
+      <% books.forEach((b) => { %>
+        <li><%= b.book_name %></li>
       <% }) %>
     </ul>
   </body>

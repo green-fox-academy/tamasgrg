@@ -10,13 +10,13 @@ const bookController = (app) => {
   });
   
   app.get('/books', (req, res) => {
-    Book.listAll((err, konyv) => {
+    Book.getTitles((err, books) => {
       if (err) {
         console.error('Error during DB query:', err);
         return;
       }
       res.render('books', {
-          konyv
+          books
       });
     });
   });
