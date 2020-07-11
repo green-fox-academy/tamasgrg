@@ -1,9 +1,7 @@
 'use strict';
 
-const db = require('../db');
-
+const Post = require("../models/Post");
 // const path = require('path');
-// const Book = require('../models/Book');
 
 const redditController = (app) => {
 
@@ -12,19 +10,12 @@ const redditController = (app) => {
   });
   
   app.get('/posts', (req, res) => {
-    const query = 'SELECT * FROM posts';
-    db.query(query, (err, posts) => {
-      if (err) {
-        console.error('Error during DB query:', err);
-        return;
-      }
-      console.log(posts);
+    Post.getAll((err, posts) => {
       res.status(200);
       res.json({"posts": posts});
-      return posts;
     });
+      // console.log(posts);
   });
-
 }
 
 module.exports = {
