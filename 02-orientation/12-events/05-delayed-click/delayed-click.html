@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Delayed click</title>
+
+    <style>
+      span {
+        display: none;
+      }
+    </style>
+
+  </head>
+  <body>
+    <button>Click this button</button>
+    <div>
+      <span>2 seconds ellapsed</span>
+    </div>
+
+    <script>
+      // Create a simple HTML document with one button. If the user clicks the button it should wait 2 seconds and it should show a text under the button: 2 seconds ellapsed
+      'use strict';
+
+      const span = document.querySelector('span');
+      const button = document.querySelector('button');
+      button.addEventListener('click', () => setTimeout(() => span.style.display = 'block', 2000));
+
+    </script>
+  </body>
+</html>
