@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Click three times</title>
+
+    <style>
+      span {
+        display: none;
+      }
+    </style>
+
+  </head>
+  <body>
+    <button>Click this button</button>
+    <div>
+      <span>5 seconds elapsed and clicked 3 times</span>
+    </div>
+
+    <script>
+      // Create a simple HTML document with one button.
+      // If the user clicks the button 3 times, and 5 seconds is already elapsed since the page is loaded, a text should appear under the button:
+      // 5 seconds elapsed and clicked 3 times
+      // If the user starts clicking before the first 5 seconds, nothing should be printed
+      
+      'use strict';
+
+      const span = document.querySelector('span');
+      const button = document.querySelector('button');
+      let countClicks = 0;
+
+      setTimeout(() => button.addEventListener('click', () => {
+        countClicks++;
+        if (countClicks >= 3) span.style.display = 'block';
+      }), 5000);
+
+    </script>
+  </body>
+</html>
