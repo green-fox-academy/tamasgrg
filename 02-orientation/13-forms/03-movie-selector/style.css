@@ -1,0 +1,39 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+  background-color: #ebbcbb;
+  box-shadow: 20px 20px #8390cc;
+  margin: 100px auto;
+  width: 500px;
+  height: 200px;
+  padding: 50px;
+  border-radius: 15px;
+}
+
+legend {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+select {
+  padding-left: 5px;
+  font-size: 18px;
+  float: left;
+  margin: 0.5%;
+  width: 48%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.result {
+  font-size: 20px;
+  padding-top: 10px;
+  clear: both;
+}
