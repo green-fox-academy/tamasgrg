@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin-top: 7%;
+  border: 5px solid black;
+  border-radius: 3%;
+  height: 750px;
+  width: 880px;
+}
+
+.grid-container {
+  margin: 1% 10%;
+  width: 80%;
+  height: 70%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 6fr 1fr;
+  gap: 12px;
+}
+
+.purple {
+  background-color: rgb(176, 42, 255);
+  height: 12%;
+  margin-top: 6%;
+  border-top: 5px solid black;
+  display: flex;
+  padding-left: 10%;
+}
+
+.blue {
+  background-color: rgb(42, 234, 255);
+  height: 45%;
+  width: 12%;
+  margin: auto 2% auto 0;
+}
+
+.yellow {
+  background-color: rgb(255, 214, 42);
+}
+
+.green {
+  background-color: rgb(81, 212, 0);
+}
+
+.grey {
+  background-color: rgb(204, 204, 204);
+  grid-column: 1 / span 2;
+}
