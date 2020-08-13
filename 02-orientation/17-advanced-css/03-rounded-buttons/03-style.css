@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(47, 48, 96);
+  text-align: center;
+}
+
+.container {
+  margin: 20% auto;
+}
+
+button {
+  color: lightgray;
+  font-size: 20px;
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 250px;
+  height: 100px;
+  margin: 50px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.blue {
+  background-color: rgb(65, 95, 158);
+  background: linear-gradient(rgb(85,119,191) 0%, rgb(65, 95, 158) 5%);
+  box-shadow: 0px 5px rgb(39, 64, 117);
+}
+
+.green {
+  background-color: rgb(27, 171, 87);
+  background: linear-gradient(rgb(85,211,139) 0%, rgb(27, 171, 87) 5%);
+  box-shadow: 0px 5px rgb(16, 107, 54);
+}
+
+.red {
+  background-color: rgb(211, 67, 51);
+  background: linear-gradient(rgb(220,100,83) 0%, rgb(211, 67, 51) 5%);
+  box-shadow: 0px 5px rgb(117, 35, 26);
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:active {
+  filter: brightness(90%);
+}
