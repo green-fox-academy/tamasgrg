@@ -13,6 +13,7 @@ body {
 table {
   width: 40%;
   margin: 10% auto;
+  border-spacing: 0;
   border-collapse: collapse;
   background-color: white;
   color: #999;
@@ -25,10 +26,15 @@ td, th {
 
 th {
   background-color: black;
+  border: none;
+  border-bottom: 4px solid #999;
   color: white;
   font-size: 30px;
   font-weight: normal;
+}
 
+th:nth-child(2) {
+  border-left: 1px solid rgb(87, 84, 84); 
 }
 
 td {
@@ -37,4 +43,8 @@ td {
 
 tbody tr:nth-child(odd) {
   background: rgb(235, 235, 235);
+}
+
+td[data-currency='dollar']::before {
+  content: "$ ";
 }
