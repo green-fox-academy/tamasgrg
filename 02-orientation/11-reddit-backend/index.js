@@ -2,14 +2,14 @@
 
 const express = require('express');
 const controller = require('./controllers/controller');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 
 const app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static('./static'));
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 controller.redditController(app);
 

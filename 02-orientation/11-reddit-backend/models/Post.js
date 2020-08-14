@@ -12,8 +12,30 @@ Post.getAll = function(result) {
       console.error('Error during DB query:', err);
       return result(err, null);
     }
-    // console.log(posts);
     result(null, posts);    
+  });
+}
+
+Post.addPost = function(posts, result) {
+  const insert = `INSERT INTO posts SET ?;`;
+  db.query(insert, posts, (err, dbResult) => {
+    if (err) {
+      console.error('Error during DB query:', err);
+      return result(err, null);
+    }
+    posts['id'] = dbResult.insertId;
+    result(null, posts);
+  });
+}
+
+Post.upvote = function(posts, result) {
+  const upvote = `UPDATE posts SET score = score + 1 WHERE id = ?;`;
+  db.query(upvote, posts, (err, dbResult) => {
+    if (err) {
+      console.error('Error during DB query:', err);
+      return result(err, null);
+    }
+    result(null, posts);
   });
 }
 

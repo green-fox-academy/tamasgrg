@@ -14,8 +14,23 @@ const redditController = (app) => {
       res.status(200);
       res.json({"posts": posts});
     });
-      // console.log(posts);
   });
+
+  app.post('/posts', (req, res) => {
+    Post.addPost(req.body, (err, posts) => {
+      res.status(200);
+      res.json(posts);
+    });
+  });
+
+  app.put('/posts/:id/upvote', (req, res) => {
+    Post.upvote(req.params.id, (err, posts) => {
+      res.status(200);
+      res.json(posts);
+    });
+  });
+
+
 }
 
 module.exports = {

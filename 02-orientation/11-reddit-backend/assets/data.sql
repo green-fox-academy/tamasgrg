@@ -1,8 +1,7 @@
 CREATE SCHEMA `reddit` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci ;
 
-
 CREATE TABLE `reddit`.`posts` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(45) NULL,
   `url` VARCHAR(45) NULL,
   `timestamp` INT NULL,
