@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Star Wars API</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <h1>Star Wars API</h1>
+  <form>
+    <label for="name">Enter character name</label>
+    <input type="text" id="name" name="name">
+    <input value="Search" type="button" id='search' onclick="swApp()" />
+  </form>
+
+  <div class=lists>
+    <ul id="char-list"></ul>
+    <ul id="movie-list"></ul>
+  </div>
+  
+  <script src="sw.js" type="application/javascript"></script>
+</body>
+</html>
