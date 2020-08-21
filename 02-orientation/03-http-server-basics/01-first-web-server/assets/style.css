@@ -10,6 +10,8 @@ html, body {
 }
 
 body {
+  color: #3cb878;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
