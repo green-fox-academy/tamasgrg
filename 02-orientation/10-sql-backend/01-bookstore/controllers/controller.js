@@ -1,6 +1,5 @@
 'use strict';
 
-// const path = require('path');
 const Book = require('../models/Book');
 
 const bookController = (app) => {
@@ -9,14 +8,27 @@ const bookController = (app) => {
     res.sendFile(__dirname + '/index.html');
   });
   
-  app.get('/books', (req, res) => {
-    Book.getData((err, books) => {
+  app.get('/titles', (req, res) => {
+    Book.getTitles((err, books) => {
       if (err) {
         console.error('Error during DB query:', err);
         return;
       }
-      res.render('books', {
-          books
+      res.render('titles', {
+          books,
+      });
+    });
+  });
+
+  app.get('/books', (req, res) => {
+    let filter = req.query;
+    Book.getData(filter, (err, books) => {
+      if (err) {
+        console.error('Error during DB query:', err);
+        return;
+      }
+      res.render('all-data', {
+          books,
       });
     });
   });

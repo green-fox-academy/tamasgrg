@@ -5,12 +5,6 @@
   </head>
   <body>
     <h1>Books</h1>
-    <h2>All titles:</h2>
-    <ul>
-      <% books.forEach((b) => { %>
-        <li><%= b.book_name %></li>
-      <% }) %>
-    </ul>
     <h2>All data:</h2>
     <table>
       <tr>
@@ -27,7 +21,7 @@
         <td><%= b.cate_descrip %> </td>
         <td><%= b.pub_name %> </td>
         <td><%= b.book_price %> </td>
-     </tr>
+    </tr>
     <% }) %>
     </table>
   </body>

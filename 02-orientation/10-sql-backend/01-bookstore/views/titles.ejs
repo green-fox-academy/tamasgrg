@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookstore App | Books</title>
+  </head>
+  <body>
+    <h1>Books</h1>
+    <h2>All titles:</h2>
+    <ul>
+      <% books.forEach((b) => { %>
+        <li><%= b.book_name %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
