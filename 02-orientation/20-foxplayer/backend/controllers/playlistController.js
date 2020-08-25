@@ -10,13 +10,19 @@ router.get('/', (req, res) => {
       console.error('Error during DB query:', err);
       return;
     }
-    res.render('playlists', {
-        playlists,
-    });
+    res.json(playlists);
   });
 });
 
-router.post('/playlists', (req, res) => {
+router.post('/', (req, res) => {
+  let newTitle = req.query.title;
+  Playlist.addNew(newTitle, (err, playlists) => {
+    if (err) {
+      console.error('Error during DB query:', err);
+      return;
+    }
+    res.json(playlists);
+  });
 });
 
 router.delete('/playlists', (req, res) => {
