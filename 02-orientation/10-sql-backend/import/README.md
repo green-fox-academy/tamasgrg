@@ -1,6 +1,6 @@
 # Import user data to MySQL
 
-Use the [bookstore database](../../sql-basics/assets/data.sql) from the
+Use the [bookstore database](../01-bookstore/assets/data.sql) from the
 previously completed SQL basics workshop.
 
 ## Examine the data
