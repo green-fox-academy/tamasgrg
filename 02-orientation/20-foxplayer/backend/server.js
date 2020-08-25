@@ -7,7 +7,11 @@ const cors = require('cors');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
-// const path = require('path');
+const path = require('path');
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '../frontend/view'));
+
 
 app.use(express.static('./frontend'));
 // app.use(bodyParser.json());
