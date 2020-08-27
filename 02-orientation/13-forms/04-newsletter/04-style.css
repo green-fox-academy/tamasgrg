@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, rgb(214,122,103) 0%, rgb(204,140,87) 100%);
+  font-family: sans-serif;
+}
+
+form {
+  background-color: white;
+  margin: 100px auto;
+  width: 500px;
+  height: 400px;
+  padding: 100px;
+  border-radius: 125px;
+  box-shadow: 25px 25px 22px 12px rgba(0,0,0,0.34);
+}
+
+legend {
+  font-weight: 600;
+  font-size: 35px;
+  padding-bottom: 30px;
+}
+
+label {
+  font-weight: 300;
+  display: block;
+  padding: 15px 0;
+  font-size: 20px;
+}
+
+input {
+  background: linear-gradient(to right, rgb(226,226,226) 0%, rgb(254,254,254) 100%);
+  padding: 5px 15px;
+  color: grey;
+  font-size: 23px;
+  height: 35px;
+  margin-bottom: 30px;
+  width: 100%;  
+  border: none;
+  border-radius: 25px;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+button {
+  background: linear-gradient(to right, rgb(98,152,246) 0%, rgb(112,234,185) 100%);
+  margin: 0 auto;
+  font-size: 35px;
+  width: 200px;
+  height: 60px;
+  color: white;
+  text-align: center;
+  border-radius: 50px;
+  display: block;
+  border: none;
+}
+
+button:focus {
+  outline: none !important;
+}
