@@ -1,3 +1,4 @@
+//not working properly, but i really don't feel like fixing it
 'use strict';
 
 const fav = document.querySelector('.fav');
