@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const router = require('./router');
 const cors = require('cors');
 
@@ -13,7 +13,9 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../frontend/view'));
 
 app.use(express.static('./frontend'));
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded());
+
 app.use(cors());
 // controller.trackController(app);
 router.route(app);

@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  let newTitle = req.query.title;
+  let newTitle = req.body.title;
   Playlist.addNew(newTitle, (err, playlists) => {
     if (err) {
       console.error('Error during DB query:', err);
