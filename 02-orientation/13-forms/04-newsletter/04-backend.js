@@ -1,19 +1,24 @@
 'use strict';
 
 const express = require('express');
-// const { send } = require('process');
 const PORT = 3000;
 const app = express();
-// const path = require('path');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const multer  = require('multer');
+const forms = multer();
 
-// app.use(express.static('./frontend'));
 app.listen(PORT, () => console.log(`The app is listening on ${PORT}`));
+app.use(express.static('./'));
+app.use(cors());
+app.use(forms.array()); 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.post('/signup', (req, res) => {
-  // Send back some HTML to the browser with the submitted data:
-  res.sendFile(__dirname + '/04-newsletter.html');
-  // <h1>Thanks {username}, we will send updates to {email}</h1>
-  // res.sendFile(path.resolve('./frontend/index.html'));
+  console.log(req.body);
+
+  res.sendFile(__dirname + '/04-signup.html');
 });
 
 
