@@ -22,8 +22,10 @@ window.onload = () => {
     const answer = await result.json();
     if (answer.error) {
       p.innerHTML = answer.error;
+      p.style.color = "red";
       return answer.error;
     } else {
+      p.style.color = "black";
       p.innerHTML = `Your URL is aliased to ${answer.alias} and your secret code is ${answer.secretCode}.`;
       form.reset();
     }
