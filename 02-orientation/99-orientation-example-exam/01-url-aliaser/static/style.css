@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  margin: 100px auto;
+  width: 500px;
+  height: 400px;
+  padding: 100px;
+}
+
+label {
+  display: block;
+  padding: 15px 0;
+}
+
+input {
+  padding: 5px 15px;
+  height: 35px;
+  margin-bottom: 30px;
+  width: 100%;  
+}
+
+button {
+  margin: 0 auto;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  display: block;
+}
