@@ -11,13 +11,15 @@ const aliasController = (app) => {
   app.post('/api/links', async (req, res) => {
     const url = req.body.url;
     const alias = req.body.alias;
-    if (url === undefined || url === '' || alias == undefined || alias === '') {
-      return res.send(400);
-    }
+    // if (url === undefined || url === '' || alias == undefined || alias === '') {
+    //   return res.status(400);
+    // }
     const result = await Alias.Alias.addAlias(url, alias);
-    // console.log(result);
-    res.send(result);
-    // console.log(req.body);
+    if (result.error) {
+      return res.status(400).send(result);
+    } else {
+      res.send(result);
+    }
   });
 
   app.get('a/', (req, res) => {

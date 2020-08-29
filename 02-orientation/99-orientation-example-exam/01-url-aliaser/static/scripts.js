@@ -2,6 +2,7 @@
 
 window.onload = () => {
   let form = document.querySelector('form');
+  let p = document.querySelector('p');
 
   form.onsubmit = async (ev) => {
     ev.preventDefault();
@@ -17,9 +18,14 @@ window.onload = () => {
         'Content-Type': 'application/json',
       },
     });
-
+    
     const answer = await result.json();
-    let p = document.querySelector('p');
-    p.innerHTML = `Your URL is aliased to ${answer.alias} and your secret code is ${answer.secretCode}.`;
+    if (answer.error) {
+      p.innerHTML = answer.error;
+      return answer.error;
+    } else {
+      p.innerHTML = `Your URL is aliased to ${answer.alias} and your secret code is ${answer.secretCode}.`;
+      form.reset();
+    }
   }
 }
