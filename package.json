@@ -1,0 +1,28 @@
+{
+  "name": "tamasgrg",
+  "version": "1.0.0",
+  "description": "https://github.com/green-fox-academy/afters-syllabus/wiki",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/green-fox-academy/tamasgrg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/green-fox-academy/tamasgrg/issues"
+  },
+  "homepage": "https://github.com/green-fox-academy/tamasgrg#readme"
+}
