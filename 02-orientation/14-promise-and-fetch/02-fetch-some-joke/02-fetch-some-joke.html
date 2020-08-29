@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch some joke</title>
+</head>
+<body>
+  <div>
+    <button>Gimme a joke</button>
+    <p></p>
+  </div>
+
+<script>
+  'use strict';
+
+  const URL = 'http://api.icndb.com/jokes/random';
+  
+  // document.querySelector('button').addEventListener("click", fetchJokeThen);
+  document.querySelector('button').addEventListener("click", fetchJokeAwait);
+
+  function fetchJokeThen() {
+    fetch(URL)
+      .then(response => response.json())
+      .then(joke => display(joke.value.joke))
+      .catch(display('Something went wrong'));
+  }
+
+  async function fetchJokeAwait() {
+    try {
+      let response = await fetch(URL);
+      let joke = await response.json();
+      display(joke.value.joke);
+    } catch {
+      display('Something went wrong');
+    }
+  }
+
+  function display(joke) {
+    let p = document.querySelector('p');
+    p.textContent = joke;
+  }
+
+</script>
+
+</body>
+</html>
