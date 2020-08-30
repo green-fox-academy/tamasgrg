@@ -1,61 +1,112 @@
-/* * {
-    margin: 0;
-} */
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-    background-image: url("./assets/bg.jpg");
+  background-image: url("./assets/bg.jpg");
 }
 
 header {
-    text-align: center;
+  text-align: center;
+  margin: 3% 0;
 }
 
-/* .main {
-    position: relative;
-    display: flex;
-    text-align: center;
-} */
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-/* .container {
-    flex: 0 1 40%;
-    justify-content: space-between;
-    flex-basis: 240px;
-} */
+#photo-viewer {
+  max-height: 531px;
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.48);
+}
+
+.arrow {
+  background-color: white;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow img:hover {
+  filter: brightness(200%);
+}
 
 #right-arrow {
-    transform: rotate(180deg);
-}
-
-.picture {
-    position: relative;
-    text-align: center;
-    color: white;
+  transform: rotate(180deg);
 }
 
 #main-pic {
-    width: 50%;
+  position: relative;
+  width: 94%;
 }
 
-.title {
-    text-align: left;
-    width: 50%;
-    background: rgba(37, 37, 37, 0.5);
-    font-size: 40px;
-    position: absolute;
-    bottom: 36px;
-    left: 25%;
+#pic-text {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: rgba(30, 30, 30, 0.6)
 }
 
-.text {
-    text-align: left;
-    width: 50%;
-    background: rgba(37, 37, 37, 0.5);
-    font-size: 30px;
-    position: absolute;
-    bottom: 8px;
-    left: 25%;
+#pic-text {
+  padding: 2%;
 }
 
-.thumbnails {
-    text-align: center;   
+#title {
+  padding-bottom: 2%;
+  color: white;
+  font-size: 30px;
+}
+
+#text {
+  font-size: 20px;
+  color: lightgray;
+}
+
+#thumbnails {
+  max-width: 500px;
+  width: 50%;
+  display: flex;
+  margin: 2% 4%;
+  justify-content: space-between;
+}
+
+#thumbnail {
+  border: 3px solid white;
+  box-shadow: 0 5px 5px -5px black;
+  position: relative;
+}
+
+#tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 120%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+#thumbnail:hover #tooltip {
+  visibility: visible;
+}
+
+.selected {
+  position: relative;
+  bottom: 10px;
+  display: block;
+  box-shadow: 0 15px 10px -6px black!important;
+  z-index: 2;
 }
