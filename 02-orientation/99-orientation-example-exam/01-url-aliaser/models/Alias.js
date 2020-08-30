@@ -34,10 +34,9 @@ class Alias {
 
   static async hitAlias(alias) {
     let record = await Alias.getByAlias(alias);
-    console.log(record);
     if (record.length > 0) {
       const increment = await dbQuery(`UPDATE aliases SET hitCount = hitCount + 1 WHERE alias = ?`, [alias]);
-      return record[0];
+      return new Alias(record[0].id, record[0].url, record[0].alias, record[0].hitCount, record[0].secretCode);
     } else {
       return {'error': 'This alias is not in the database'};
     }
@@ -46,12 +45,18 @@ class Alias {
   static async deleteAlias(id, code) {
     let record = await dbQuery('SELECT * FROM aliases WHERE id=?', [id]);
     if (record.length < 1) {
-      return {'error': 'The given ID is not in the database'};
+      return {
+        'error': 'The given ID is not in the database',
+        'status': 404
+      };
     } else if (record[0].secretCode !== code) {
-      return {'error': 'The secret code is wrong'};
+      return {
+        'error': 'The secret code is wrong',
+        'status': 403
+      };
     } else {
       const del = await dbQuery('DELETE FROM aliases WHERE id = ?', [id]);
-      return record[0];
+      return new Alias(record[0].id, record[0].url, record[0].alias, record[0].hitCount, record[0].secretCode);
     }
   }
 
