@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: rgb(238, 238, 238);
+}
+
+header {
+  height: 500px;
+  width: 100%;
+  background-image: url('assets/space.jpg');
+  color: white;
+  letter-spacing: 20px;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 1%;
+}
+
+.posts {
+  background-color: white;
+  display: flex;
+  width: 62%;
+}
+
+.score {
+  width: 10%;
+}
+
+.content {
+  width: 90%;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+button {
+  width: 100%;
+  color: white;
+  background-color: rgb(74, 163, 223);
+}
