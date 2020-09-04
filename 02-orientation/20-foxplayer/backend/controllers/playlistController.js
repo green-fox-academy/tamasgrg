@@ -25,7 +25,20 @@ router.post('/', (req, res) => {
   });
 });
 
-router.delete('/playlists', (req, res) => {
+router.delete('/:id', (req, res) => {
+  let id = parseInt(req.params.id);
+  if (isNaN(id)) {
+    res.status(400);
+    res.json({'Error': 'Please provide a valid number as playlist ID'});
+  } else {
+    Playlist.delete(id, (err, playlists) => {
+      if (err) {
+        console.error('Error during DB query:', err);
+        return;
+      }
+      res.json(playlists);
+    });
+  }
 });
 
 module.exports = router;
