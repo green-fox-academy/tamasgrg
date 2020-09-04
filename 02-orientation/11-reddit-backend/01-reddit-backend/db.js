@@ -7,6 +7,7 @@ const conn = mysql.createConnection({
   user: 'root',
   password: 'password',
   database: 'reddit',
+  multipleStatements: true,
 });
 
 conn.connect((err) => {
@@ -17,4 +18,17 @@ conn.connect((err) => {
   console.log('Successfully connected to DB.');
 });
 
-module.exports = conn;
+const dbQuery = (q, params) => {
+  return new Promise((resolve, reject) => {
+    conn.query(q, params, (err, result) => {
+      if (err) {
+        console.error(err);
+        reject(err);
+      } else {
+        resolve(result);
+      }
+    });
+  })
+}
+
+module.exports = dbQuery;
