@@ -1,2 +1,6 @@
 00-missing-tasks
 node_modules
+.idea
+*.iml
+*.class
+out
