@@ -1,0 +1,55 @@
+GET http://localhost:8080/api/todos/1
+User-Agent: 1
+
+###
+
+GET http://localhost:8080/api/todos
+User-Agent: 1
+
+###
+
+PUT http://localhost:8080/api/todos/1
+Content-Type: application/json
+User-Agent: 1
+
+{
+  "id": 1,
+  "task": "Buy milkfgdsfghdghdfg",
+  "isCompleted": false,
+  "deadline": "2020-09-11",
+  "priority": "high"
+}
+
+###
+
+DELETE http://localhost:8080/api/todos/2
+User-Agent: 1
+
+###
+
+POST http://localhost:8080/api/todos
+Content-Type: application/json
+User-Agent: 1
+
+{
+"task": "Buy milk",
+"deadline": "2020-09-11",
+"priority": "high"
+}
+
+###
+
+GET http://localhost:8080/api/users/1
+
+###
+
+GET http://localhost:8080/api/users
+
+###
+
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "Tibor"
+}

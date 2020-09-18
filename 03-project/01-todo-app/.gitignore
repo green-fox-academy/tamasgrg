@@ -1,6 +1,4 @@
-00-missing-tasks
-node_modules
-
+HELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
