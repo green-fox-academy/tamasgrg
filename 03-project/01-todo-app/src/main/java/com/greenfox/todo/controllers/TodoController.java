@@ -27,6 +27,16 @@ public class TodoController {
         }
     }
 
+    @PutMapping("api/todos/{todoId}")
+    public ResponseEntity<?> changeTodo(@PathVariable(name = "todoId") int id, @RequestBody Todo todo) {
+        try {
+            Todo savedTodo = todoService.changeTodo(id, todo);
+            return ResponseEntity.status(HttpStatus.OK).body(savedTodo);
+        } catch (NoSuchUserException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorMessage(e.getMessage()));
+        }
+    }
+
     @PostMapping("api/todos")
     public ResponseEntity<?> addTodo(@RequestBody Todo todo) {
         Todo savedTodo = todoService.saveTodo(todo);

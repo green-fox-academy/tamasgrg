@@ -13,12 +13,12 @@ public class Todo {
     private String deadline;
     private String priority;
 
-    public boolean isCompleted() {
+    public boolean getCompleted() {
         return isCompleted;
     }
 
-    public void setCompleted(boolean isCompleted) {
-        this.isCompleted = isCompleted;
+    public void setCompleted(boolean completed) {
+        this.isCompleted = completed;
     }
 
     public Integer getId() {

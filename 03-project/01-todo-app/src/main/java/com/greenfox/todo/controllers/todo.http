@@ -1,11 +1,27 @@
-POST http://localhost:8080/api/todos
+GET http://localhost:8080/api/todos/1
+
+###
+
+PUT http://localhost:8080/api/todos/2
 Content-Type: application/json
 
 {
-  "task": "Buy milk",
+  "id": 1,
+  "task": "Buy milkfgdsfghdghdfg",
+  "isCompleted": false,
   "deadline": "2020-09-11",
   "priority": "high"
 }
 
 ###
-GET http://localhost:8080/api/todos/1
+
+POST http://localhost:8080/api/todos
+Content-Type: application/json
+
+{
+"task": "Buy milk",
+"deadline": "2020-09-11",
+"priority": "high"
+}
+
+###
