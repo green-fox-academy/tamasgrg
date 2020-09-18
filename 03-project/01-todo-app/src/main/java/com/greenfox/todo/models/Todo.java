@@ -12,6 +12,8 @@ public class Todo {
     private boolean isCompleted;
     private String deadline;
     private String priority;
+    @ManyToOne
+    private TodoUser user;
 
     public boolean getCompleted() {
         return isCompleted;
@@ -51,5 +53,17 @@ public class Todo {
 
     public void setPriority(String priority) {
         this.priority = priority;
+    }
+
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public TodoUser getUser() {
+        return user;
+    }
+
+    public void setUser(TodoUser user) {
+        this.user = user;
     }
 }
