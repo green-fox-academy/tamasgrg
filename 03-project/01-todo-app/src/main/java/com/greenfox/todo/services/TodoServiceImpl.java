@@ -2,7 +2,9 @@ package com.greenfox.todo.services;
 
 import com.greenfox.todo.exceptions.NoSuchUserException;
 import com.greenfox.todo.models.Todo;
+import com.greenfox.todo.models.TodoUser;
 import com.greenfox.todo.repositories.TodoRepository;
+import com.greenfox.todo.repositories.TodoUserRepository;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
 
@@ -10,9 +12,13 @@ import java.util.Optional;
 public class TodoServiceImpl implements TodoService {
 
     private TodoRepository todoRepository;
+    private TodoUserService todoUserService;
+//    private TodoUserRepository todoUserRepository;
 
-    public TodoServiceImpl(TodoRepository todoRepository) {
+
+    public TodoServiceImpl(TodoRepository todoRepository, TodoUserService todoUserService) {
         this.todoRepository = todoRepository;
+        this.todoUserService = todoUserService;
     }
 
     @Override
@@ -32,7 +38,11 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public Todo saveTodo(Todo todo) {
+    public Todo saveTodo(Todo todo, int userId) {
+        Optional<TodoUser> user = todoUserService.findUserById(userId);
+        if (user.isPresent()) {
+            todo.setUser(user.get());
+        }
         Todo savedTodo = todoRepository.save(todo);
         return savedTodo;
     }

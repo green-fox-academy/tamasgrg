@@ -12,7 +12,8 @@ public class TodoUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-
+    //    private ArrayList<Todo> todos;
+    
     public Integer getId() {
         return id;
     }
@@ -28,5 +29,4 @@ public class TodoUser {
     public void setName(String name) {
         this.name = name;
     }
-//    private ArrayList<Todo> todos;
 }

@@ -5,6 +5,8 @@ import com.greenfox.todo.models.TodoUser;
 import com.greenfox.todo.repositories.TodoUserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class TodoUserServiceImpl implements TodoUserService {
 
@@ -20,8 +22,8 @@ public class TodoUserServiceImpl implements TodoUserService {
     }
 
     @Override
-    public TodoUser findUserById(int id) throws NoSuchUserException {
-        return null;
+    public Optional<TodoUser> findUserById(int id) throws NoSuchUserException {
+        return todoUserRepository.findById(id);
     }
 
     @Override

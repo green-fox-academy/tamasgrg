@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 public class TodoUserController {
@@ -22,7 +23,7 @@ public class TodoUserController {
     @GetMapping("/api/users/{userId}")
     public ResponseEntity<?> findUserById(@PathVariable(name = "userId") int id) {
         try {
-            TodoUser user = todoUserService.findUserById(id);
+            Optional<TodoUser> user = todoUserService.findUserById(id);
             return ResponseEntity.status(HttpStatus.OK).body(user);
         } catch (NoSuchUserException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorMessage(e.getMessage()));

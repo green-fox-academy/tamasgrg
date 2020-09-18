@@ -3,7 +3,10 @@ package com.greenfox.todo.controllers;
 import com.greenfox.todo.exceptions.NoSuchUserException;
 import com.greenfox.todo.models.ErrorMessage;
 import com.greenfox.todo.models.Todo;
+import com.greenfox.todo.models.TodoUser;
 import com.greenfox.todo.services.TodoService;
+import com.greenfox.todo.services.TodoUserService;
+import com.greenfox.todo.services.TodoUserServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -63,8 +66,15 @@ public class TodoController {
     }
 
     @PostMapping("api/todos")
-    public ResponseEntity<?> addTodo(@RequestBody Todo todo) {
-        Todo savedTodo = todoService.saveTodo(todo);
+    public ResponseEntity<?> addTodo(@RequestBody Todo todo, @RequestHeader(value="User-Agent") int userId) {
+//        TodoUser user = findUserById(id);
+//        System.out.println(id);
+//        Todo newTodo = new Todo();
+//        newTodo.setUser(TodoUserServiceImpl.findUserById(id));
+
+
+        Todo savedTodo = todoService.saveTodo(todo, userId);
+//        savedTodo.setUser(id);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedTodo);
     }
 

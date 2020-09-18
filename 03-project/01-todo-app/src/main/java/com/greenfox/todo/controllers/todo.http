@@ -25,6 +25,7 @@ DELETE http://localhost:8080/api/todos/1
 
 POST http://localhost:8080/api/todos
 Content-Type: application/json
+User-Agent: 2
 
 {
 "task": "Buy milk",
@@ -39,3 +40,12 @@ GET http://localhost:8080/api/users/1
 ###
 
 GET http://localhost:8080/api/users
+
+###
+
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "Tibor"
+}

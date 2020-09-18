@@ -5,7 +5,7 @@ import com.greenfox.todo.models.Todo;
 
 public interface TodoService {
 
-    public Todo saveTodo(Todo todo);
+    public Todo saveTodo(Todo todo, int userId);
     public Todo findTodoById(int id) throws NoSuchUserException;
     public Iterable<Todo> getAllTodos();
     public Todo changeTodo(int id, Todo todo) throws NoSuchUserException;

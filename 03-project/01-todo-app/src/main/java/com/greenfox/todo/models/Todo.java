@@ -12,8 +12,17 @@ public class Todo {
     private boolean isCompleted;
     private String deadline;
     private String priority;
+//    private Integer todoUserId;
     @ManyToOne
     private TodoUser user;
+
+//    public Integer getTodoUserId() {
+//        return todoUserId;
+//    }
+//
+//    public void setTodoUserId(Integer userId) {
+//        this.todoUserId = userId;
+//    }
 
     public boolean getCompleted() {
         return isCompleted;
