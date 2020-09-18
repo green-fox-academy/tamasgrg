@@ -24,7 +24,11 @@ public class TodoUserController {
     public ResponseEntity<?> findUserById(@PathVariable(name = "userId") int id) {
         try {
             Optional<TodoUser> user = todoUserService.findUserById(id);
-            return ResponseEntity.status(HttpStatus.OK).body(user);
+            if (user.isPresent()) {
+                return ResponseEntity.status(HttpStatus.OK).body(user);
+            } else {
+                throw new NoSuchUserException();
+            }
         } catch (NoSuchUserException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorMessage(e.getMessage()));
         }

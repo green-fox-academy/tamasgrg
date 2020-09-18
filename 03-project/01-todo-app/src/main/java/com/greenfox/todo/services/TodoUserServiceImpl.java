@@ -4,7 +4,6 @@ import com.greenfox.todo.exceptions.NoSuchUserException;
 import com.greenfox.todo.models.TodoUser;
 import com.greenfox.todo.repositories.TodoUserRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 @Service
@@ -18,7 +17,7 @@ public class TodoUserServiceImpl implements TodoUserService {
 
     @Override
     public Iterable<TodoUser> listAllUsers() {
-        return null;
+        return todoUserRepository.findAll();
     }
 
     @Override

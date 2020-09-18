@@ -12,8 +12,7 @@ public class TodoUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    //    private ArrayList<Todo> todos;
-    
+
     public Integer getId() {
         return id;
     }
