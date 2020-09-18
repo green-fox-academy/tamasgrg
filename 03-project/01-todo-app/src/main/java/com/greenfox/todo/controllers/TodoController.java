@@ -8,6 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @RestController
 public class TodoController {
 
@@ -22,6 +26,19 @@ public class TodoController {
         try {
             Todo todo = todoService.findTodoById(id);
             return ResponseEntity.status(HttpStatus.OK).body(todo);
+        } catch (NoSuchUserException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorMessage(e.getMessage()));
+        }
+    }
+
+    @GetMapping("api/todos")
+    public ResponseEntity<?> getAllTodos() {
+        try {
+            Iterable<Todo> allTodos = todoService.getAllTodos();
+            Map<String, Iterable> responseBody  = new HashMap<String, Iterable>() {{
+                put("todos", allTodos);
+            }};
+            return ResponseEntity.status(HttpStatus.OK).body(responseBody);
         } catch (NoSuchUserException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorMessage(e.getMessage()));
         }
