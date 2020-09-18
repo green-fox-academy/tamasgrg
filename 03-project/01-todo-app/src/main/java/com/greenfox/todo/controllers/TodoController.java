@@ -37,6 +37,16 @@ public class TodoController {
         }
     }
 
+    @DeleteMapping("api/todos/{todoId}")
+    public ResponseEntity<?> deleteTodo(@PathVariable(name = "todoId") int id) {
+        try {
+            todoService.deleteTodo(id);
+            return ResponseEntity.status(HttpStatus.OK).body("Todo successfully deleted.");
+        } catch (NoSuchUserException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorMessage(e.getMessage()));
+        }
+    }
+
     @PostMapping("api/todos")
     public ResponseEntity<?> addTodo(@RequestBody Todo todo) {
         Todo savedTodo = todoService.saveTodo(todo);

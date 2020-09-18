@@ -46,4 +46,15 @@ public class TodoServiceImpl implements TodoService {
             throw new NoSuchUserException();
         }
     }
+
+    @Override
+    public Todo deleteTodo(int id) throws NoSuchUserException {
+        Optional<Todo> todoOptional = todoRepository.findById(id);
+        if (todoOptional.isPresent()) {
+            todoRepository.deleteById(id);
+            return null;
+        } else {
+            throw new NoSuchUserException();
+        }
+    }
 }

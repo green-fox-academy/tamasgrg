@@ -8,4 +8,5 @@ public interface TodoService {
     public Todo saveTodo(Todo todo);
     public Todo findTodoById(int id) throws NoSuchUserException;
     public Todo changeTodo(int id, Todo todo) throws NoSuchUserException;
+    public Todo deleteTodo(int id) throws NoSuchUserException;
 }
