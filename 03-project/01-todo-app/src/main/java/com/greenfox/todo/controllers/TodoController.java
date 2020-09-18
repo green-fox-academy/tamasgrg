@@ -1,12 +1,12 @@
 package com.greenfox.todo.controllers;
 
+import com.greenfox.todo.exceptions.NoSuchUserException;
+import com.greenfox.todo.models.ErrorMessage;
 import com.greenfox.todo.models.Todo;
 import com.greenfox.todo.services.TodoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class TodoController {
@@ -15,6 +15,16 @@ public class TodoController {
 
     public TodoController(TodoService todoService) {
         this.todoService = todoService;
+    }
+
+    @GetMapping("api/todos/{todoId}")
+    public ResponseEntity<?> getTodoById(@PathVariable(name = "todoId") int id) {
+        try {
+            Todo todo = todoService.findTodoById(id);
+            return ResponseEntity.status(HttpStatus.OK).body(todo);
+        } catch (NoSuchUserException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorMessage(e.getMessage()));
+        }
     }
 
     @PostMapping("api/todos")

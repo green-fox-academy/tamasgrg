@@ -9,9 +9,9 @@ public class Todo {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String task;
+    private boolean isCompleted;
     private String deadline;
     private String priority;
-    private boolean isCompleted;
 
     public boolean isCompleted() {
         return isCompleted;
