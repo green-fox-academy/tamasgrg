@@ -13,6 +13,10 @@ public class TodoController {
 
     private TodoService todoService;
 
+    public TodoController(TodoService todoService) {
+        this.todoService = todoService;
+    }
+
     @PostMapping("api/todos")
     public ResponseEntity<?> addTodo(@RequestBody Todo todo) {
         Todo savedTodo = todoService.saveTodo(todo);
