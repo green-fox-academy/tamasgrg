@@ -1,13 +1,16 @@
 GET http://localhost:8080/api/todos/1
+User-Agent: 1
 
 ###
 
 GET http://localhost:8080/api/todos
+User-Agent: 1
 
 ###
 
-PUT http://localhost:8080/api/todos/2
+PUT http://localhost:8080/api/todos/1
 Content-Type: application/json
+User-Agent: 1
 
 {
   "id": 1,
@@ -19,13 +22,14 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/todos/1
+DELETE http://localhost:8080/api/todos/2
+User-Agent: 1
 
 ###
 
 POST http://localhost:8080/api/todos
 Content-Type: application/json
-User-Agent: 2
+User-Agent: 1
 
 {
 "task": "Buy milk",
