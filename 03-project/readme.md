@@ -144,7 +144,19 @@ talaltam egy ropke 5 oras videot a spring security-rol: https://www.youtube.com/
 
 ez a bcrypt-es resz: https://www.youtube.com/watch?v=her_7pa0vrg&t=3039s
 
+- Kond:
+a @Value-val behuzott valtozokat a tesztekben ugy tudjatok mockolni, hogy pl:
+ReflectionTestUtils.setField(userService, "passwordMinLength", 8);
+hogy ezt ne kelljen tesztenkent beallitani, mehet az elejere a setUp-ba
 
+itt a mai video:
+https://youtu.be/I05YeK3xa8A
+
+- Zoli:
+ezt a videót néztem egyébként Gergő:
+https://www.youtube.com/watch?v=X80nJ5T7YpE&ab_channel=JavaBrains
+meg ezt:
+https://www.javainuse.com/spring/boot-jwt
 
 
 
