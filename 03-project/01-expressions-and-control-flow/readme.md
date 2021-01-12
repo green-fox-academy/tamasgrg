@@ -111,8 +111,8 @@ public class HelloWorld {
 #### Exercises
 
 - [HelloMe](exercises/01-hello-me/HelloMe.java)
-- [HumptyDumpty](02-humpty-dumpty/HumptyDumpty.java)
-- [HelloOthers](03-hello-others/HelloOthers.java)
+- [HumptyDumpty](exercises/02-humpty-dumpty/HumptyDumpty.java)
+- [HelloOthers](exercises/03-hello-others/HelloOthers.java)
 
 ### Types
 
@@ -243,9 +243,9 @@ public class Strings {
 
 #### Exercises
 
-- [IntroduceYourself](04-introduce-yourself/IntroduceYourself.java)
-- [TwoNumbers](05-two-numbers/TwoNumbers.java)
-- [CodingHours](06-coding-hours/CodingHours.java)
+- [IntroduceYourself](exercises/04-introduce-yourself/IntroduceYourself.java)
+- [TwoNumbers](exercises/05-two-numbers/TwoNumbers.java)
+- [CodingHours](exercises/06-coding-hours/CodingHours.java)
 
 ### Variables
 
@@ -337,13 +337,13 @@ public class Variables {
 
 #### Exercises
 
-- [FavoriteNumber](07-favorite-number/FavoriteNumber.java)
-- [Swap](08-swap/Swap.java)
-- [Bmi 💪](09-bmi/Bmi.java)
-- [DefineBasicInfo](10-define-basic-info/DefineBasicInfo.java)
-- [VariableMutation](11-variable-mutation/VariableMutation.java)
-- [Cuboid 💪](12-cuboid/Cuboid.java)
-- [SecondsInADay](13-seconds-in-a-day/SecondsInADay.java)
+- [FavoriteNumber](exercises/07-favorite-number/FavoriteNumber.java)
+- [Swap](exercises/08-swap/Swap.java)
+- [Bmi 💪](exercises/09-bmi/Bmi.java)
+- [DefineBasicInfo](exercises/10-define-basic-info/DefineBasicInfo.java)
+- [VariableMutation](exercises/11-variable-mutation/VariableMutation.java)
+- [Cuboid 💪](exercises/12-cuboid/Cuboid.java)
+- [SecondsInADay](exercises/13-seconds-in-a-day/SecondsInADay.java)
 
 ### User input (scanner)
 
@@ -373,10 +373,10 @@ public class UserInput {
 
 #### Exercises
 
-- [HelloUser](14-hello-user/HelloUser.java)
-- [MileToKmConverter](15-mile-to-km-converter/MileToKmConverter.java)
-- [AnimalsAndLegs 💪](16-animals-and-legs/AnimalsAndLegs.java)
-- [AverageOfInput 💪](17-average-of-input/AverageOfInput.java)
+- [HelloUser](exercises/14-hello-user/HelloUser.java)
+- [MileToKmConverter](exercises/15-mile-to-km-converter/MileToKmConverter.java)
+- [AnimalsAndLegs 💪](exercises/16-animals-and-legs/AnimalsAndLegs.java)
+- [AverageOfInput 💪](exercises/17-average-of-input/AverageOfInput.java)
 
 ### Conditionals
 
@@ -430,11 +430,11 @@ public class Conditionals {
 
 #### Exercises
 
-- [OddEven](18-odd-even/OddEven.java)
-- [OneTwoALot](19-one-two-a-lot/OneTwoALot.java)
-- [PrintBigger 💪](20-print-bigger/PrintBigger.java)
-- [PartyIndicator](21-party-indicator/PartyIndicator.java)
-- [ConditionalVariableMutation 💪](22-conditional-variable-mutation/ConditionalVariableMutation.java)
+- [OddEven](exercises/18-odd-even/OddEven.java)
+- [OneTwoALot](exercises/19-one-two-a-lot/OneTwoALot.java)
+- [PrintBigger 💪](exercises/20-print-bigger/PrintBigger.java)
+- [PartyIndicator](exercises/21-party-indicator/PartyIndicator.java)
+- [ConditionalVariableMutation 💪](exercises/22-conditional-variable-mutation/ConditionalVariableMutation.java)
 
 ### Loops
 
@@ -456,25 +456,25 @@ public class Conditionals {
 
 #### Exercises
 
-- [IWontCheatOnTheExams](23-i-wont-cheat-on-the-exams/IWontCheatOnTheExams.java)
-- [PrintEven](24-print-even/PrintEven.java)
-- [MultiplicationTable](25-multiplication-table/MultiplicationTable.java)
-- [CountFromTo](26-count-from-to/CountFromTo.java)
-- [FizzBuzz](27-fizz-buzz/FizzBuzz.java)
-- [DrawTriangle](28-draw-triangle/DrawTriangle.java)
-- [DrawPyramid 💪](29-draw-pyramid/DrawPyramid.java)
-- [DrawDiamond 💪](30-draw-diamond/DrawDiamond.java)
-- [DrawSquare 💪](31-draw-square/DrawSquare.java)
-- [DrawDiagonal](32-draw-diagonal/DrawDiagonal.java)
-- [GuessTheNumber](33-guess-the-number/GuessTheNumber.java)
-- [ParametricAverage 💪](34-parametric-average/ParametricAverage.java)
-- [DrawChessTable](35-draw-chess-table/DrawChessTable.java)
+- [IWontCheatOnTheExams](exercises/23-i-wont-cheat-on-the-exams/IWontCheatOnTheExams.java)
+- [PrintEven](exercises/24-print-even/PrintEven.java)
+- [MultiplicationTable](exercises/25-multiplication-table/MultiplicationTable.java)
+- [CountFromTo](exercises/26-count-from-to/CountFromTo.java)
+- [FizzBuzz](exercises/27-fizz-buzz/FizzBuzz.java)
+- [DrawTriangle](exercises/28-draw-triangle/DrawTriangle.java)
+- [DrawPyramid 💪](exercises/29-draw-pyramid/DrawPyramid.java)
+- [DrawDiamond 💪](exercises/30-draw-diamond/DrawDiamond.java)
+- [DrawSquare 💪](exercises/31-draw-square/DrawSquare.java)
+- [DrawDiagonal](exercises/32-draw-diagonal/DrawDiagonal.java)
+- [GuessTheNumber](exercises/33-guess-the-number/GuessTheNumber.java)
+- [ParametricAverage 💪](exercises/34-parametric-average/ParametricAverage.java)
+- [DrawChessTable](exercises/35-draw-chess-table/DrawChessTable.java)
 
 ### Hard Ones
 
 Be aware that it potentially uses concepts that you have to research.
 
-- [Find the substring](36-substr/SubStr.java)
+- [Find the substring](exercises/36-substr/SubStr.java)
 
 ## Individual Workshop Review
 
