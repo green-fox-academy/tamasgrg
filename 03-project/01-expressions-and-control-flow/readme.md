@@ -7,7 +7,7 @@ running our first programs.
 
 | Material                                                                                          |            Time |
 |:--------------------------------------------------------------------------------------------------|----------------:|
-| [Historical background leading to Java (Guru-01)](https://www.youtube.com/watch?v=2Xa3Y4xz8_s)      |            6:01 |
+| [Historic background leading to Java (Guru-01)](https://www.youtube.com/watch?v=2Xa3Y4xz8_s)      |            6:01 |
 | [Installing IntelliJ IDEA for java on Windows 10](https://www.youtube.com/watch?v=E2okEJIbUYs)    |            9:02 |
 | [Basic Syntax](https://www.youtube.com/watch?v=SSEpAsKqRqA)                                       |           10:35 |
 | [Mathematical Operations & Primitive Variable Types](https://www.youtube.com/watch?v=XwvrFugFmKQ) |           11:42 |
@@ -20,20 +20,21 @@ running our first programs.
 
 #### Java
 
-- [Download Java SE Development Kit 14](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html)
-- Download integrated development environment (IDE) [Intellij IDEA](https://www.jetbrains.com/idea/download/)
-  - **Choose Community** edition (we're going to switch to Ultimate in
-    orientation phase - you will get a license from your mentor)
-- Activate IntelliJ IDEA following [this activation guide](assets/intellij-activation.md)
-- [Set the environment variables in Windows](http://www.codejava.net/java-core/how-to-set-environment-variables-for-java-using-command-line)
-- [How to speed up IntelliJ IDE in Windows](assets/how-to-speed-up-intellij.md)
+- [Download Java SE Development Kit 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- if *jre* (Java Runtime Environment) didn't download, get that too
+- download the development environment tool: www.jetbrains.com - Install
+  Intellij-IDEA; get the Ultimate edition (but ensure you get the license from
+  a Mentor)
+- activate IntelliJ IDEA following [this activation guide](assets/intellij-activation.md)
+- [Set the environment variables on Windows](http://www.codejava.net/java-core/how-to-set-environment-variables-for-java-using-command-line)
+- [How to speed up IntelliJ on Windows](assets/how-to-speed-up-intellij.md)
 
 ## Material Review
 
 - What is a programming language?
 - What type of programming language is Java?
   <!-- an imperative statically typed programming language -->
-- What do we need to be able to write a program?
+- What do we need to write a program?
   <!-- a text editor, IntelliJ IDEA -->
 - What is a statement?
   <!-- syntactic unit that expresses some action to be carried out -->
@@ -41,34 +42,34 @@ running our first programs.
 - What is variable declaration?
 - What is variable assignment?
 - What kind of variable types do you know?
-  <!-- byte, short, int, long, float, double, boolean, char, String -->
+  <!-- byte, int, float, boolean, char, String -->
 - What is an operator?
 - What type of operators do you know?
   <!--
-  arithmetic operators:
-  additive (+),
-  subtraction (-),
-  multiplication (*),
-  division (/),
-  remainder (%)
-  
-  unary operators:
-  increment (++),
-  decrement (--),
-  logical complement (!)
-  
-  equality and relational operators:
-  equal to (==),
-  not equal to (!=),
-  greater than (>),
-  greater than or equal to (>=),
-  less than (<),
-  less than or equal to (<=)
-  
-  conditional operators:
-  conditional-AND (&&),
-  conditional-OR (||)
-  -->
+    arithmetic operators:
+      additive (+),
+      subtraction (-),
+      multiplication (*),
+      division (/),
+      remainder (%)
+
+    unary operators:
+      increment (++),
+      decrement (--),
+      logical complement (!)
+
+    equality and relational operators:
+      equal to (==),
+      not equal to (!=),
+      greater than (>),
+      greater than or equal to (>=),
+      less than (<),
+      less than or equal to (<=)
+
+    conditional operators:
+      conditional-AND (&&),
+      conditional-OR (||)
+    -->
 - What is the *Hello World!* application?
 - What is string concatenation?
 - What is a *block*?
@@ -88,9 +89,7 @@ It helps you to visualize code execution.
 ## Workshop
 
 > **Note**: Create a project for the day and create a new java file for each
-> task with a `main()` method. **Insert each task description into your java
-> file as a comment!** This comment will help you and your mentor see what
-> needs to be done for the given task without visiting GitHub.
+> task with a "main" method.
 
 💪: If you see this emoji, it means that you can skip the exercise if you are
 in lack of time. You can practice with these exercises later to deepen your
@@ -103,28 +102,17 @@ knowledge (or to prepare for the exam).
 ```java
 public class HelloWorld {
   public static void main(String[] args) {
-    // Prints "Hello, World!" to the terminal window
+    // Prints "Hello, World!" to the terminal window.
     System.out.println("Hello, World!");
   }
 }
 ```
 
-### Comments
-
-```java
-// single line comment
-
-/*
- multi line
- comment block
-*/
-```
-
 #### Exercises
 
-- [HelloMe](hello-me/hello-me.java.md)
-- [HumptyDumpty](humpty-dumpty/humpty-dumpty.java.md)
-- [HelloOthers](hello-others/hello-others.java.md)
+- [HelloMe](exercises/01-hello-me/HelloMe.java)
+- [HumptyDumpty](02-humpty-dumpty/HumptyDumpty.java)
+- [HelloOthers](03-hello-others/HelloOthers.java)
 
 ### Types
 
@@ -133,13 +121,13 @@ public class HelloWorld {
 ```java
 public class PrintValues {
   public static void main(String[] args) {
-    // Prints a string to the terminal window
+    // Prints a string to the terminal window.
     System.out.println("Hello, World!");
 
-    // Prints an integer to the terminal window
+    // Prints an integer to the terminal window.
     System.out.println(42);
 
-    // Prints a floating point number to the terminal window
+    // Prints a floating point number to the terminal window.
     System.out.println(3.141592);
   }
 }
@@ -150,12 +138,14 @@ public class PrintValues {
 ```java
 public class Integers {
   public static void main(String[] args) {
-    // Positive, negative and zero (not null)
-    System.out.println(42);  // Prints 42
-    System.out.println(-1);  // Prints -1
-    System.out.println(0);   // Prints 0
+    // Positive, negative and zero
+    System.out.println(42); // Prints 42
+    System.out.println(-1); // Prints -1
+    System.out.println(0); // Prints 0
 
+    // Maximum and minimum value
     // A simple integer is represented in 4 bytes (32bit)
+
     // Maximum value:  2 147 483 647
     System.out.println(2147483647);
     // Minimum value: -2 147 483 648
@@ -171,14 +161,14 @@ public class Integers {
 ```java
 public class Floats {
   public static void main(String[] args) {
-    // Positive, negative and zero (not null)
-    System.out.println(3.1415);   // Prints 3.1415
-    System.out.println(-1.5);     // Prints -1.5
-    System.out.println(0.0);      // Prints 0.0
+    // Positive, negative and zero
+    System.out.println(3.1415); // Prints 3.1415
+    System.out.println(-1.5); // Prints -1.5
+    System.out.println(0.0); // Prints 0.0
 
     // Leading and closing zero is not mandatory
-    System.out.println(.5);      // Prints 0.5
-    System.out.println(5.);      // Prints 5.0
+    System.out.println(.5); // Prints 0.5
+    System.out.println(5.); // Prints 5.0
   }
 }
 ```
@@ -188,16 +178,16 @@ public class Floats {
 ```java
 public class NumberOperations {
   public static void main(String[] args) {
-    // Arithmetic operations
-    System.out.println(1 + 1);    // Prints 2
-    System.out.println(5 - 2);    // Prints 3
-    System.out.println(3 * 4);    // Prints 12
-    System.out.println(6 / 2);    // Prints 3
-    System.out.println(5 / 2);    // Prints 2
-    System.out.println(5. / 2);   // Prints 2.5
-    System.out.println(5 / 2.);   // Prints 2.5
-    System.out.println(5. / 2.);  // Prints 2.5
-    System.out.println(5 % 2);    // Prints 1
+    // Arithmetric operations
+    System.out.println(1 + 1); // Prints 2
+    System.out.println(5 - 2); // Prints 3
+    System.out.println(3 * 4); // Prints 12
+    System.out.println(6 / 2); // Prints 3
+    System.out.println(5 / 2); // Prints 2
+    System.out.println(5. / 2); // Prints 2.5
+    System.out.println(5 / 2.); // Prints 2.5
+    System.out.println(5. / 2.); // Prints 2.5
+    System.out.println(5 % 2); // Prints 1
   }
 }
 ```
@@ -208,25 +198,25 @@ public class NumberOperations {
 public class Booleans {
   public static void main(String[] args) {
     // true, false
-    System.out.println(true);    // Prints true
-    System.out.println(false);   // Prints false
+    System.out.println(true); // Prints true
+    System.out.println(false); // Prints false
 
     // Boolean Operators
     // Negation
-    System.out.println(!true);   // Prints false
-    System.out.println(!false);  // Prints true
+    System.out.println(!true); // Prints false
+    System.out.println(!false); // Prints true
 
     // And
-    System.out.println(true && true);    // Prints true
-    System.out.println(true && false);   // Prints false
-    System.out.println(false && true);   // Prints false
-    System.out.println(false && false);  // Prints false
+    System.out.println(true && true); // Prints true
+    System.out.println(true && false); // Prints false
+    System.out.println(false && true); // Prints false
+    System.out.println(false && false); // Prints false
 
     // Or
-    System.out.println(true || true);    // Prints true
-    System.out.println(true || false);   // Prints true
-    System.out.println(false || true);   // Prints true
-    System.out.println(false || false);  // Prints false
+    System.out.println(true || true); // Prints true
+    System.out.println(true || false); // Prints true
+    System.out.println(false || true); // Prints true
+    System.out.println(false || false); // Prints false
   }
 }
 ```
@@ -237,13 +227,12 @@ public class Booleans {
 public class Strings {
   public static void main(String[] args) {
     // String and special characters
-    System.out.println("apple");   // Prints apple
-    System.out.println("don't");   // Prints don't
+    System.out.println("apple"); // Prints apple
+    System.out.println("don't"); // Prints don't
     System.out.println("\"Everything you can imagine is real.\" - Picasso"); // Prints "Everything you can imagine is real." - Picasso
 
     // String Operators
-    // Concatenation
-    // Concat string with string
+    // Concatination
     System.out.println("tooth" + "brush"); // Prints toothbrush
 
     // Concat string with number
@@ -254,9 +243,9 @@ public class Strings {
 
 #### Exercises
 
-- [IntroduceYourself](introduce-yourself/introduce-yourself.java.md)
-- [TwoNumbers](two-numbers/two-numbers.java.md)
-- [CodingHours](coding-hours/coding-hours.java.md)
+- [IntroduceYourself](04-introduce-yourself/IntroduceYourself.java)
+- [TwoNumbers](05-two-numbers/TwoNumbers.java)
+- [CodingHours](06-coding-hours/CodingHours.java)
 
 ### Variables
 
@@ -284,19 +273,19 @@ public class Variables {
     System.out.println(pi);
 
     // Other mentioned types
-    byte b = 2;                // Byte (8 bit; min:-128; max: +127)
-    short s = 567;             // Short (16 bit; min: -32768 ; max: +32 767)
-    long l = 30000000000000L;  // Long (64 bit; min: -9 223 372 036 854 775 808 ;max: 9 223 372 036 854 775 807)
+    byte b = 2;     // Byte (8 bit; min:-128; max: +127)
+    short s = 567;  // Short (16 bit; min: -32768 ; max: +32 767)
+    long l = 30000000000000L; // long (64 bit; min: -9 223 372 036 854 775 808 ;max: 9 223 372 036 854 775 807)
     float f = 1.3f;
-    float f2 = 45f;            // Float (32 bit single precision IEEE 754)
+    float f2 = 45f; // Float (32 bit single precision IEEE 754)
 
     // Declaring a variable
     int number;
 
-    // Assigning a value to a variable, (define its value)
+    // Assigning a variable, (define its value)
     number = 12;
 
-    // Mutating a variable, (redefine its value)
+    // Mutate a variable, (redefine its value)
     number = 23;
   }
 }
@@ -309,52 +298,52 @@ public class Variables {
   public static void main(String[] args) {
     int a = 12;
     a += 4;
-    System.out.println(a);     // Prints 16
+    System.out.println(a); // Prints 16
 
     int b = 12;
     b -= 4;
-    System.out.println(b);     // Prints 8
+    System.out.println(b); // Prints 8
 
     int c = 12;
-    System.out.println(c++);   // Prints 12
-    System.out.println(c);     // Prints 13
+    System.out.println(c++); // Prints 12
+    System.out.println(c); // Prints 13
 
     int d = 12;
-    System.out.println(++d);   // Prints 13
-    System.out.println(d);     // Prints 13
+    System.out.println(++d); // Prints 13
+    System.out.println(d); // Prints 13
 
     int e = 12;
-    System.out.println(e--);   // Prints 12
-    System.out.println(e);     // Prints 11
+    System.out.println(e--); // Prints 12
+    System.out.println(e); // Prints 11
 
     int f = 12;
-    System.out.println(--f);   // Prints 11
-    System.out.println(f);     // Prints 11
+    System.out.println(--f); // Prints 11
+    System.out.println(f); // Prints 11
 
     int g = 12;
     g *= 3;
-    System.out.println(g);     // Prints 36
+    System.out.println(g); // Prints 36
 
     int h = 12;
     h /= 3;
-    System.out.println(h);     // Prints 4
+    System.out.println(h); // Prints 4
 
     int i = 12;
     i %= 7;
-    System.out.println(i);     // Prints 5
+    System.out.println(i); // Prints 5
   }
 }
 ```
 
 #### Exercises
 
-- [FavoriteNumber](favorite-number/favorite-number.java.md)
-- [Swap](swap/swap.java.md)
-- [Bmi 💪](bmi/bmi.java.md)
-- [DefineBasicInfo](define-basic-info/define-basic-info.java.md)
-- [VariableMutation](variable-mutation/variable-mutation.java.md)
-- [Cuboid 💪](cuboid/cuboid.java.md)
-- [SecondsInADay](seconds-in-a-day/seconds-in-a-day.java.md)
+- [FavoriteNumber](07-favorite-number/FavoriteNumber.java)
+- [Swap](08-swap/Swap.java)
+- [Bmi 💪](09-bmi/Bmi.java)
+- [DefineBasicInfo](10-define-basic-info/DefineBasicInfo.java)
+- [VariableMutation](11-variable-mutation/VariableMutation.java)
+- [Cuboid 💪](12-cuboid/Cuboid.java)
+- [SecondsInADay](13-seconds-in-a-day/SecondsInADay.java)
 
 ### User input (scanner)
 
@@ -384,10 +373,10 @@ public class UserInput {
 
 #### Exercises
 
-- [HelloUser](hello-user/hello-user.java.md)
-- [MileToKmConverter](mile-to-km-converter/mile-to-km-converter.java.md)
-- [AnimalsAndLegs 💪](animals-and-legs/animals-and-legs.java.md)
-- [AverageOfInput 💪](average-of-input/average-of-input.java.md)
+- [HelloUser](14-hello-user/HelloUser.java)
+- [MileToKmConverter](15-mile-to-km-converter/MileToKmConverter.java)
+- [AnimalsAndLegs 💪](16-animals-and-legs/AnimalsAndLegs.java)
+- [AverageOfInput 💪](17-average-of-input/AverageOfInput.java)
 
 ### Conditionals
 
@@ -433,7 +422,7 @@ public class Conditionals {
     } else if (thirsty || hungry) {
       System.out.println("Snack time!");
     } else {
-      System.out.println("No food for you.");
+      System.out.println("No food for you, little fatty.");
     }
   }
 }
@@ -441,11 +430,11 @@ public class Conditionals {
 
 #### Exercises
 
-- [OddEven](odd-even/odd-even.java.md)
-- [OneTwoALot](one-two-a-lot/one-two-a-lot.java.md)
-- [PrintBigger 💪](print-bigger/print-bigger.java.md)
-- [PartyIndicator](party-indicator/party-indicator.java.md)
-- [ConditionalVariableMutation 💪](conditional-variable-mutation/conditional-variable-mutation.java.md)
+- [OddEven](18-odd-even/OddEven.java)
+- [OneTwoALot](19-one-two-a-lot/OneTwoALot.java)
+- [PrintBigger 💪](20-print-bigger/PrintBigger.java)
+- [PartyIndicator](21-party-indicator/PartyIndicator.java)
+- [ConditionalVariableMutation 💪](22-conditional-variable-mutation/ConditionalVariableMutation.java)
 
 ### Loops
 
@@ -467,32 +456,32 @@ public class Conditionals {
 
 #### Exercises
 
-- [IWontCheatOnTheExams](i-wont-cheat-on-the-exams/i-wont-cheat-on-the-exams.java.md)
-- [PrintEven](print-even/print-even.java.md)
-- [MultiplicationTable](multiplication-table/multiplication-table.java.md)
-- [CountFromTo](count-from-to/count-from-to.java.md)
-- [FizzBuzz](fizz-buzz/fizz-buzz.java.md)
-- [DrawTriangle](draw-triangle/draw-triangle.java.md)
-- [DrawPyramid 💪](draw-pyramid/draw-pyramid.java.md)
-- [DrawDiamond 💪](draw-diamond/draw-diamond.java.md)
-- [DrawSquare 💪](draw-square/draw-square.java.md)
-- [DrawDiagonal](draw-diagonal/draw-diagonal.java.md)
-- [GuessTheNumber](guess-the-number/guess-the-number.java.md)
-- [ParametricAverage 💪](parametric-average/parametric-average.java.md)
-- [DrawChessTable](draw-chess-table/draw-chess-table.java.md)
+- [IWontCheatOnTheExams](23-i-wont-cheat-on-the-exams/IWontCheatOnTheExams.java)
+- [PrintEven](24-print-even/PrintEven.java)
+- [MultiplicationTable](25-multiplication-table/MultiplicationTable.java)
+- [CountFromTo](26-count-from-to/CountFromTo.java)
+- [FizzBuzz](27-fizz-buzz/FizzBuzz.java)
+- [DrawTriangle](28-draw-triangle/DrawTriangle.java)
+- [DrawPyramid 💪](29-draw-pyramid/DrawPyramid.java)
+- [DrawDiamond 💪](30-draw-diamond/DrawDiamond.java)
+- [DrawSquare 💪](31-draw-square/DrawSquare.java)
+- [DrawDiagonal](32-draw-diagonal/DrawDiagonal.java)
+- [GuessTheNumber](33-guess-the-number/GuessTheNumber.java)
+- [ParametricAverage 💪](34-parametric-average/ParametricAverage.java)
+- [DrawChessTable](35-draw-chess-table/DrawChessTable.java)
 
 ### Hard Ones
 
-Be aware that these tasks potentially use concepts that you have to research!
+Be aware that it potentially uses concepts that you have to research.
 
-- [Find the substring](substr/substr.java.md)
+- [Find the substring](36-substr/SubStr.java)
 
 ## Individual Workshop Review
 
 Please follow the styleguide: [Our Java styleguide](../../styleguide/java.md)
 
 - Is the directory structure and the name of the files correct?
-- Are the includes/imports placed on the top of the files?
+- Are the includes palced on the top of the files?
 - Is the indentation good in each file?
 - Is there unnecessary code?
 - Can you find unnecessary code in comments?
@@ -504,4 +493,4 @@ Please follow the styleguide: [Our Java styleguide](../../styleguide/java.md)
   - Classes: UpperCamelCase
   - variables: lowerCamelCase
 - Are all of the brackets in the perfect place?
-- Whitespaces: where they should be, where shouldn't?
+- Whitespaces, where they should be, where shouldn't?
