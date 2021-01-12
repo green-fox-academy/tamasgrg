@@ -110,7 +110,7 @@ public class HelloWorld {
 
 #### Exercises
 
-- [HelloMe](exercises/01-hello-me/HelloMe.java)
+- [task01HelloMe](exercises/01-hello-me/HelloMe.java)
 - [HumptyDumpty](exercises/02-humpty-dumpty/HumptyDumpty.java)
 - [HelloOthers](exercises/03-hello-others/HelloOthers.java)
 
